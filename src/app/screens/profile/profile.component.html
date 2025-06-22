@@ -1,0 +1,20 @@
+<div class="profil-container">
+    <h2>Mein Konto</h2>
+
+    <div class="profil-content">
+        <img [src]="'assets/' + (profile?.picture || 'character_9.png')" alt="Profilbild" />
+
+        <div class="profil-details">
+            <p><span>Vorname:</span> {{ profile?.firstname || '—' }}</p>
+            <p><span>Nachname:</span> {{ profile?.lastname || '—' }}</p>
+            <p><span>Benutzername:</span> {{ profile?.username || '—' }}</p>
+            <p><span>Präferenz:</span> {{ profile?.preferences || '—' }}</p>
+        </div>
+    </div>
+
+    <div class="profil-actions">
+        <button routerLink="/profile/favorites">♥ Favoriten</button>
+      <button (click)="navigateToComments()">💬 Kommentare</button>
+      <button routerLink="/profile/settings">⚙️ Bearbeiten</button>
+    </div>
+</div>

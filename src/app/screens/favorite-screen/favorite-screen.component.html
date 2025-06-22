@@ -1,0 +1,23 @@
+<section class="recipe-list-section">
+  <h2>💚 Meine Favoriten</h2>
+
+  <div *ngIf="favorites.length === 0" class="no-favorites">
+    <p>Du hast noch keine Favoriten gespeichert.</p>
+  </div>
+
+  <div class="recipe-grid">
+    <div *ngFor="let recipe of favorites" class="recipe-card">
+      
+      <button class="delete-button" (click)="removeFavorite(recipe._id, $event)">🗑️</button>
+
+      <a class="card-content" [routerLink]="['/recipe', recipe._id]">
+        <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
+        <h3>{{ recipe.title }}</h3>
+        <div class="recipe-meta">
+          <span>👥 {{ recipe.portions }} Portionen</span>
+          <span>⏱ {{ recipe.preparation_time }} Minuten</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
