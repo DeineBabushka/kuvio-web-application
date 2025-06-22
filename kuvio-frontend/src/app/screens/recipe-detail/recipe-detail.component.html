@@ -1,0 +1,86 @@
+<section class="recipe-detail">
+  <div class="title-with-img">
+    <h1>{{ recipe.title }}</h1>
+
+    <div class="meta-with-fav" *ngIf="recipe">
+      <div class="meta">
+        <span>👥 {{ recipe.portions }} Portionen</span>
+        <span>⏱️ {{ recipe.preparation_time }}</span>
+      </div>
+      @if(localStorage.getItem('token')) {
+        <button (click)="toggleFavorite()" class="fav-button">
+          <img [src]="isFavorite ? 'assets/schwarz_volles_Herz.png' : 'assets/schwarz_leeres_Herz.png'"
+               class="fav-icon" />
+        </button>
+      }
+
+    </div>
+
+    <img class="recipe-image" [src]="'assets/' + recipe.image" [alt]="recipe.title" />
+  </div>
+
+  <div class="recipe-content">
+    <h2>Zutaten</h2>
+    <ul class="ingredient-list">
+      <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+    </ul>
+
+    <h2>Zubereitung</h2>
+    <ul class="instructions">
+      <li *ngFor="let step of recipe.instructions">{{ step }}</li>
+    </ul>
+
+    <div class="nutrition-box" *ngIf="recipe.nutrition">
+      <h3>Nährwerte</h3>
+      <ul>
+        <li>🔥 Kalorien: {{ recipe.nutrition.calories }} kcal</li>
+        <li>💪 Eiweiß: {{ recipe.nutrition.protein_g }} g</li>
+        <li>🍞 Kohlenhydrate: {{ recipe.nutrition.carbohydrates_g }} g</li>
+        <li>🧈 Fett: {{ recipe.nutrition.fat_g }} g</li>
+      </ul>
+    </div>
+
+    <h2>Kommentare</h2>
+    <div *ngIf="comments.length > 0; else noComments">
+      <div *ngFor="let comment of comments" class="comment-box"
+        [ngClass]="{ 'own-comment': comment.userID === userId }">
+        <img class="comment-avatar" [src]="'assets/' + (comment.picture || 'character_9.png')" alt="Profilbild" />
+
+        <div class="comment-content">
+          <div class="comment-header">
+            <a class="comment-username"
+              [routerLink]="comment.userID === userId ? '/profile' : ['/user', comment.username]">
+              {{ comment.username }} <span *ngIf="comment.userID === userId">(Du)</span>
+            </a>
+
+            <span class="comment-date">{{ comment.created_at | date: 'dd.MM.yyyy, HH:mm' }}</span>
+          </div>
+
+          <p class="comment-text">{{ comment.comment }}</p>
+          <p class="comment-rating">
+            <ng-container *ngFor="let star of getStars(comment.rating)">★</ng-container>
+            <ng-container *ngFor="let empty of getEmptyStars(comment.rating)">☆</ng-container>
+          </p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noComments>
+      <p>Keine Kommentare vorhanden.</p>
+    </ng-template>
+
+
+    @if(localStorage.getItem('token')) {
+      <h2>Kommentar schreiben</h2>
+      <form (ngSubmit)="submitComment()" #commentForm="ngForm" class="comment-form">
+        <label for="rating">Bewertung (1–5):</label>
+        <input type="number" id="rating" name="rating" [(ngModel)]="newComment.rating" min="1" max="5" required />
+
+        <label for="comment">Kommentar:</label>
+        <textarea id="comment" name="comment" [(ngModel)]="newComment.comment" rows="4" required></textarea>
+
+        <button type="submit" [disabled]="!commentForm.form.valid">Absenden</button>
+      </form>
+    }
+
+  </div>
+</section>
