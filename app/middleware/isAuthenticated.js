@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secret = process.env.JWT_SECRET || 'mein_geheimes_token_passwort';
+const secret = process.env.JWT_SECRET
 
 module.exports = function (req, res, next) {
   const authHeader = req.headers.authorization;
@@ -11,10 +11,8 @@ module.exports = function (req, res, next) {
   const token = authHeader.split(' ')[1];
 
   try {
-    req.user = jwt.verify(token, secret); // z.B. { id, username, role }
-    console.log(req.user)
+    req.user = jwt.verify(token, secret);
   } catch (err) {
-    console.log(err)
     return res.status(403).json({ message: 'Token ungültig oder abgelaufen' });
   }
 
@@ -23,13 +21,11 @@ module.exports = function (req, res, next) {
   }
 
   if(!req.params.id) {
-    console.log("No ID specified - continue action")
     next()
     return
   }
 
   if(req.user.role === "admin") {
-    console.log("Admin Bypass - continue action")
     next()
     return
   }
@@ -37,4 +33,3 @@ module.exports = function (req, res, next) {
   next()
 };
 
-//Prüft, ob der JWT-Token gültig ist und speicher User-Daten in req.user.

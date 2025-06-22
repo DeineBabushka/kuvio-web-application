@@ -19,8 +19,6 @@ async function getUserPublicAction(request, response) {
 
 async function getOwnProfileAction(req, res) {
     const userID = req.user.id;
-    console.log('Token liefert ID:', req.user.id);
-    console.log('Parsed userID:', userID);
 
 
     try {
@@ -49,14 +47,13 @@ async function deleteUserAction(request, response) {
             return response.status(400).json({ error: 'No user specified' });
         }
         let userid = request.params.id
-        let status = await deleteUser(userid); // await wichtig hier
+        let status = await deleteUser(userid);
         response.status(status.code).json(status.message);
     } catch (error) {
         response.status(500).json({ error: error.message });
     }
 }
 
-//wichtig, da nur Admin Profil endgültig löschen darf
 async function deleteUserPermanentlyAction(request, response) {
     try {
         if (!request.params.id) {

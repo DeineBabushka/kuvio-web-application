@@ -6,11 +6,10 @@ async function getAllRecipes() {
     return await db.collection('recipes').find().toArray();
 }
 
-// Funktion: Einzelnes Rezept per ID abrufen (für Controller → GET /api/recipes/:id)
 async function getRecipeById(id) {
     const db = await getMongoDB()
-    const objectId = new ObjectId(id); // In gültige MongoDB-ID umwandeln
-    return await db.collection('recipes').findOne({_id: objectId}); // Re
+    const objectId = new ObjectId(id);
+    return await db.collection('recipes').findOne({_id: objectId});
 }
 
 async function getRandomRecipes() {
@@ -24,10 +23,8 @@ async function getRandomRecipes() {
             return {message: 'No recipes found.', code: 404};
         }
 
-        console.log(recipes);
         return {message: recipes, code: 200};
     } catch (err) {
-        console.error('Fehler beim Abrufen zufälliger Rezepte:', err);
         return {message: `Error requesting recipes: ${err}`, code: 500};
     }
 }
@@ -75,12 +72,7 @@ async function getRecipeByQuery(filterSettings) {
         filters.push("Fisch");
     }
 
-    if (filterSettings.search)
-    {
-        console.log("Test")
-    }
 
-    console.log("Applied filters:", filters);
 
     try {
         const db = await getMongoDB();
@@ -110,7 +102,6 @@ async function getRecipeByQuery(filterSettings) {
     }
 }
 
-// Beide Funktionen exportieren, damit sie im Controller benutzt werden können
 module.exports = {
     getAllRecipes,
     getRecipeById,

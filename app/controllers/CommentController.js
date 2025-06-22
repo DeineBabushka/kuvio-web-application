@@ -42,7 +42,7 @@ async function postCommentAction(request, response) {
 
 async function deleteCommentAction(req, res) {
     const commentID = req.params.commentID;
-    const userID = req.user.id; // aus JWT-Token extrahiert
+    const userID = req.user.id;
 
     if (!commentID) {
         return res.status(400).json({ message: 'commentID fehlt' });
