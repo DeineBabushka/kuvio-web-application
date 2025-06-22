@@ -1,0 +1,26 @@
+<button class="hamburger" (click)="toggleMenu()" aria-label="Menü">
+  ☰
+</button>
+
+<nav class="navbar" [class.open]="menuOpen">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Startseite</a>
+
+  <a routerLink="/recipe" routerLinkActive="active">Rezepte</a>
+
+  <ng-container *ngIf="auth.isLoggedIn()">
+    <a routerLink="/profile/favorites" routerLinkActive="active">Favoriten</a>
+  </ng-container>
+
+  <ng-container *ngIf="auth.isAdmin()">
+    <a routerLink="/admin-dashboard" routerLinkActive="active">Admin-Dashboard</a>
+  </ng-container>
+
+  <ng-container *ngIf="auth.isLoggedIn(); else loginLink">
+    <a routerLink="/profile">Konto</a>
+    <a href="#" (click)="logout()" class="logout-link">Logout</a>
+  </ng-container>
+
+  <ng-template #loginLink>
+    <a routerLink="/login">Einloggen</a>
+  </ng-template>
+</nav>

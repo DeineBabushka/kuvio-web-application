@@ -1,0 +1,30 @@
+<div class="register-container">
+    <div class="register-box">
+        <h2>Registrieren</h2>
+
+        <form (ngSubmit)="register()" class="register-form">
+            <label for="firstname">Vorname</label>
+            <input id="firstname" type="text" [(ngModel)]="firstname" name="firstname" required />
+
+            <label for="lastname">Nachname</label>
+            <input id="lastname" type="text" [(ngModel)]="lastname" name="lastname" required />
+
+            <label for="username">Benutzername</label>
+            <input id="username" type="text" [(ngModel)]="username" name="username" required />
+
+            <label for="password">Passwort</label>
+            <input id="password" type="password" [(ngModel)]="password" name="password" required />
+
+            <button type="submit" class="register-button">Registrieren</button>
+        </form>
+        
+        <div *ngIf="showMessage" [ngClass]="{ 'custom-toast': true, 'error': isError, 'success': !isError }">
+            {{ messageText }}
+        </div>
+
+        <div class="login-hint">
+            <p>Schon ein Konto?</p>
+            <button [routerLink]="['/login']" class="login-button">Zum Login</button>
+        </div>
+    </div>
+</div>

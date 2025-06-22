@@ -1,0 +1,18 @@
+<div class="profil-container" *ngIf="user() as user">
+    <h2>Profil von {{ user.username }}</h2>
+
+    <div class="profil-content">
+        <img [src]="'assets/' + (user.picture || 'character_9.png')" alt="Profilbild" />
+
+        <div class="profil-details">
+            <p><span>Benutzername:</span> {{ user.username || '—' }}</p>
+            <p><span>Präferenz:</span> {{ user.preferences || '—' }}</p>
+        </div>
+    </div>
+
+    <div class="profil-actions">
+        <button [routerLink]="['/favorites', user.username]">♥ Favoriten von {{ user.username }}</button>
+        <button [routerLink]="['/comments', user.username]">💬 Kommentare von {{ user.username }}</button>
+
+    </div>
+</div>

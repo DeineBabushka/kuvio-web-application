@@ -1,0 +1,28 @@
+.action-button {
+  background-color: #122620;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: darkred;
+  }
+}
+
+.mat-mdc-header-cell {
+  background-color: #0e1d18 !important;
+  margin-top: 10px;
+  color: white !important;
+}
+
+.mat-mdc-cell {
+  color: black;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.add-button {
+  background-color: blueviolet;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: darkviolet;
+  }
+}
