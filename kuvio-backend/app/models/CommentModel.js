@@ -6,13 +6,11 @@ async function getAllCommentsByUserId(userId) {
             'SELECT commentID, userID, recipeID, rating, comment, created_at FROM comments_ratings WHERE userID = ?',
             [userId]
         );
-        console.log(`GET Comment by USERID - ${userId}`);
         if (comment.length === 0) {
             return { message: `No Comments by this User found`, code: 404 };
         }
         return { message: comment, code: 200 };
     } catch (err) {
-        console.log(err);
         return { message: `An error occurred`, code: 500 };
     }
 }
@@ -34,7 +32,6 @@ async function getCommentsByRecipeId(recipeId) {
             WHERE c.recipeID = ? AND u.is_deleted = 0
         `, [recipeId]);
 
-        console.log(`GET Comments by RECIPEID - ${recipeId}`);
 
         return {
             message: comments,
@@ -73,7 +70,6 @@ async function postComment(recipeid, userid, rating, comment, created_at) {
             [userid, recipeid, rating, comment, created_at]
         );
     } catch (err) {
-        console.log(err);
         return { message: `An error occurred`, code: 500 };
     } finally {
         await conn.release();

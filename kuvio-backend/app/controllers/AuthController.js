@@ -1,8 +1,6 @@
-const { login, register, logout } = require("../models/AuthModel");
-// TODO add Username and validate if it already exists.
+const { login, register} = require("../models/AuthModel");
 
 async function loginAction(request, response) {
-    // TODO change name to username once ready
     if (!request.body.username || !request.body.password) {
         return response.status(400).json({ message: 'All Fields must be filled in.' });
     }
