@@ -1,0 +1,61 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: ${MARIA_HOST}
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIA_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIA_DATABASE}
+      MARIADB_USER: ${MARIA_USER}
+      MARIADB_PASSWORD: ${MARIA_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./kuvio-backend/database/mariadb-init:/docker-entrypoint-initdb.d
+      - ./kuvio-backend/database/mariadb-data:/var/lib/mysql
+    networks:
+      - kuvio-net
+
+  mongodb:
+    image: mongo:latest
+    container_name: ${MONGO_HOST}
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./kuvio-backend/database/mongodb_data:/data/db
+      - ./kuvio-backend/database/mongodb-init:/docker-entrypoint-initdb.d
+    networks:
+      - kuvio-net
+
+  kuvio-backend:
+    build: ./kuvio-backend
+    container_name: kuvio-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+      - mariadb
+    networks:
+      - kuvio-net
+    env_file:
+    - .env
+
+  kuvio-frontend:
+    build: ./kuvio-frontend
+    container_name: kuvio-frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - kuvio-backend
+    networks:
+      - kuvio-net
+
+networks:
+  kuvio-net:
+    driver: bridge
