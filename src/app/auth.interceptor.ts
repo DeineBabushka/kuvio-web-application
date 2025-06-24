@@ -3,10 +3,11 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { catchError, throwError } from 'rxjs';
+import { TokenService } from './services/token.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const authService = inject(AuthService);
-  const token = localStorage.getItem('token');
+  const tokenservice = inject(TokenService);
+  const token = tokenservice.getToken();
   const router = inject(Router);
 
   const authReq = token
@@ -20,7 +21,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         : error.error?.message || '';
 
       if (error.status === 403 && msg.includes('Token ungültig oder abgelaufen')) {
-        authService.logout();
+        tokenservice.logout();
         router.navigate(['/']);
       }
 

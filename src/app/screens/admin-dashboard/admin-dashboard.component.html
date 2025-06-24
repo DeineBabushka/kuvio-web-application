@@ -37,12 +37,20 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions</th>
     <td mat-cell *matCellDef="let user">
-      <button (click)="deleteUser(user.userID)" mat-mini-fab class="action-button">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button (click)="deleteUserPermanently(user.userID)" mat-mini-fab class="action-button">
-        <mat-icon>delete_forever</mat-icon>
-      </button>
+      @if (user.role !== "admin") {
+        @if (user.is_deleted == 1) {
+          <button (click)="deleteUser(user.userID,'UNDO')"  mat-mini-fab class="action-button">
+            <mat-icon>undo</mat-icon>
+          </button>
+        } @else {
+          <button (click)="deleteUser(user.userID,'DELETE')" mat-mini-fab class="action-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        }
+        <button (click)="deleteUserPermanently(user.userID)" mat-mini-fab class="action-button">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      }
     </td>
   </ng-container>
 

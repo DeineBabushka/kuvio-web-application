@@ -1,43 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+interface LoginResponse {
+    token: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-    getToken(): string | null {
-        return localStorage.getItem('token');
+    private apiUrl = 'http://localhost:3000/api/auth';
+
+    constructor(private http: HttpClient) { }
+
+    login(username: string, password: string): Observable<LoginResponse> {
+        return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { username, password });
     }
 
-    getUsername(): string | null {
-        const token = this.getToken();
-        if (!token) return null;
-        try {
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            return payload.username;
-        } catch (e) {
-            return null;
-        }
-    }
-
-    getRole(): string | null {
-        const token = this.getToken();
-        if (!token) return null;
-        try {
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            return payload.role;
-        } catch (e) {
-            return null;
-        }
-    }
-
-    isAdmin(): boolean {
-        return this.getRole() === 'admin';
-    }
-
-    isLoggedIn(): boolean {
-        return !!this.getToken();
-    }
-
-    logout(): void {
-        localStorage.removeItem('token');
-        localStorage.removeItem('UserID');
+    register(user: {
+        firstname: string;
+        lastname: string;
+        username: string;
+        password: string;
+        picture: string;
+    }): Observable<any> {
+        return this.http.post(`${this.apiUrl}/register`, user);
     }
 }

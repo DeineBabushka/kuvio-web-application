@@ -1,30 +1,12 @@
-<div *ngIf="auth.isLoggedIn()" class="willkommen-box">
-  Willkommen zurück, {{ auth.getUsername() }}!
+<div *ngIf="tokenservice.isLoggedIn()" class="willkommen-box">
+  Willkommen zurück, {{ tokenservice.getUsername() }}!
 </div>
 
 <section class="daily-recipe-section">
   <h2>Rezepte des Tages</h2>
 
-  <div class="carousel-wrapper">
-    <div class="recipe-carousel">
-      <div class="recipe-card" *ngFor="let recipe of visibleRecipes" (click)="goToRecipeDetail(recipe._id)">
-        <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
-        <h3>{{ recipe.title }}</h3>
-        <p>⌛{{ recipe.preparation_time }}</p>
-      </div>
-    </div>
-
-    <div class="nav-buttons">
-      <button class="nav-circle" (click)="prevRecipe()">❮</button>
-      <button class="nav-circle" (click)="nextRecipe()">❯</button>
-    </div>
-
-    <div class="dots">
-      <span *ngFor="let _ of recipes.slice(0, recipes.length - 4); let idx = index" class="dot"
-        [class.active]="idx === currentIndex">
-      </span>
-    </div>
-  </div>
+  <app-recipe-carousel [recipes]="recipes" (navigateTo)="goToRecipeDetail($event)">
+  </app-recipe-carousel>
 </section>
 
 <section class="info-section">

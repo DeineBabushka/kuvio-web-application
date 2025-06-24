@@ -1,8 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-user-profile-public',
@@ -13,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class UserProfilePublicComponent {
   private route = inject(ActivatedRoute);
-  private http = inject(HttpClient);
+  private userService = inject(UserService);
 
   user = signal<any>({});
   errorMessage = signal<string | null>(null);
@@ -25,19 +24,15 @@ export class UserProfilePublicComponent {
   }
 
   loadUser() {
-    this.http.get(`http://localhost:3000/api/user/public/${this.userName}`).subscribe({
-      next: (res) => {
+    this.userService.getPublicUser(this.userName).subscribe({
+      next: (res: any) => {
         this.user.set(res);
         this.errorMessage.set(null);
       },
-      error: (err) => {
-        console.error('Fehler beim Laden des öffentlichen Profils:', err);
+      error: (err: any) => {
         this.errorMessage.set('Öffentliches Profil konnte nicht geladen werden.');
       }
     });
   }
 
-  userData() {
-    return this.user();
-  }
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../../../services/user.service';
 
 interface Recipe {
   _id: string;
@@ -19,19 +19,21 @@ interface Recipe {
   styleUrls: ['./public-favorites.component.css']
 })
 export class PublicFavoritesComponent implements OnInit {
-  username: string = '';
-  userId: string = '';
-  favorites: Recipe[] = [];
-  errorMessage: string = '';
-  isLoading: boolean = true;
+  private route = inject(ActivatedRoute);
+  private userService = inject(UserService);
+  private http = inject(HttpClient);
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  username = '';
+  userId = '';
+  favorites = signal<Recipe[]>([]);
+  errorMessage = signal<string>('');
+  isLoading = signal<boolean>(true);
 
   ngOnInit(): void {
     const routeUsername = this.route.snapshot.paramMap.get('username');
     if (!routeUsername) {
-      this.errorMessage = 'Kein Benutzername angegeben.';
-      this.isLoading = false;
+      this.errorMessage.set('Kein Benutzername angegeben.');
+      this.isLoading.set(false);
       return;
     }
 
@@ -40,39 +42,39 @@ export class PublicFavoritesComponent implements OnInit {
   }
 
   private loadUserAndFavorites(): void {
-    this.http.get<any>(`http://localhost:3000/api/user/public/${this.username}`).subscribe({
-      next: (user) => {
+    this.userService.getPublicUser(this.username).subscribe({
+      next: (user: any) => {
         const id = user?.userID ?? user?._id;
         if (!id) {
-          console.error('Fehlende userID im API-Response:', user);
-          this.errorMessage = 'Fehlende Benutzer-ID.';
-          this.isLoading = false;
+          this.errorMessage.set('Fehlende Benutzer-ID.');
+          this.isLoading.set(false);
           return;
         }
 
         this.userId = id;
         this.loadFavorites();
       },
-      error: (err) => {
-        console.error('Benutzer nicht gefunden:', err);
-        this.errorMessage = 'Benutzer nicht gefunden.';
-        this.isLoading = false;
+      error: (err: any) => {
+        this.errorMessage.set('Benutzer nicht gefunden.');
+        this.isLoading.set(false);
       }
     });
   }
 
-
   private loadFavorites(): void {
     this.http.get<{ message: Recipe[] }>(`http://localhost:3000/api/favorites/${this.userId}`).subscribe({
-      next: (res) => {
-        this.favorites = res.message ?? [];
-        this.isLoading = false;
+      next: (res: any) => {
+        this.favorites.set(res.message ?? []);
+        this.isLoading.set(false);
       },
-      error: (err) => {
-        console.error('Fehler beim Laden der Favoriten:', err);
-        this.errorMessage = 'Fehler beim Laden der Favoriten.';
-        this.isLoading = false;
+      error: (err: any) => {
+        this.errorMessage.set('Fehler beim Laden der Favoriten.');
+        this.isLoading.set(false);
       }
     });
+  }
+
+  favoritesList() {
+    return this.favorites();
   }
 }

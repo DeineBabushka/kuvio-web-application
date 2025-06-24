@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-quote-of-the-day',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './quote-of-the-day.component.html',
   styleUrls: ['./quote-of-the-day.component.css']
 })

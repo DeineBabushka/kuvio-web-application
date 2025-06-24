@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, inject, signal } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../../../services/user.service';
 
 interface Comment {
   commentID: string;
@@ -22,43 +22,53 @@ interface Comment {
   styleUrls: ['./public-comments.component.css']
 })
 export class PublicCommentsComponent implements OnInit {
+  private route = inject(ActivatedRoute);
+  private userService = inject(UserService);
+  private http = inject(HttpClient);
+
   username = '';
   userId = '';
-  comments: Comment[] = [];
-
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  comments = signal<Comment[]>([]);
+  errorMessage = signal<string | null>(null);
+  isLoading = signal<boolean>(true);
 
   ngOnInit(): void {
     const routeUsername = this.route.snapshot.paramMap.get('username');
-    if (!routeUsername) return;
+    if (!routeUsername) {
+      this.errorMessage.set('Kein Benutzername angegeben.');
+      this.isLoading.set(false);
+      return;
+    }
 
     this.username = routeUsername;
     this.loadUserAndComments();
   }
 
   private loadUserAndComments(): void {
-    this.http.get<any>(`http://localhost:3000/api/user/public/${this.username}`).subscribe({
-      next: (user) => {
+    this.userService.getPublicUser(this.username).subscribe({
+      next: (user: any) => {
         const id = user?.userID ?? user?._id;
         if (!id) {
-          console.error('Fehlende userID im API-Response:', user);
+          this.errorMessage.set('Fehlende Benutzer-ID.');
+          this.isLoading.set(false);
           return;
         }
 
         this.userId = id;
         this.loadComments();
       },
-      error: (err) => {
-        console.error('Benutzer nicht gefunden:', err);
+      error: () => {
+        this.errorMessage.set('Benutzer nicht gefunden.');
+        this.isLoading.set(false);
       }
     });
   }
 
-
   private loadComments(): void {
     this.http.get<{ message: Comment[] }>(`http://localhost:3000/api/comments/user/${this.userId}`).subscribe({
-      next: async (res) => {
+      next: async (res: any) => {
         const comments = res.message ?? [];
+
         for (const comment of comments) {
           try {
             const recipe = await this.http.get<any>(`http://localhost:3000/api/recipes/${comment.recipeID}`).toPromise();
@@ -67,11 +77,17 @@ export class PublicCommentsComponent implements OnInit {
             comment.recipeTitle = '(Fehler beim Laden)';
           }
         }
-        this.comments = comments;
+
+        this.comments.set(comments)
+        this.isLoading.set(false);
       },
-      error: (err) => {
-        console.error('Fehler beim Laden der Kommentare:', err);
-      }
+      error: () => { this.errorMessage.set('Kommentare konnten nicht geladen werden.');
+        this.isLoading.set(false);}
+
     });
+  }
+
+  commentList() {
+    return this.comments();
   }
 }

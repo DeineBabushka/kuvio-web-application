@@ -1,15 +1,6 @@
-<div *ngIf="successMessage" class="success-box">
-    {{ successMessage }}
-</div>
-
-<div *ngIf="errorMessage" class="error-box">
-    {{ errorMessage }}
-</div>
-
 <div *ngIf="showMessage" [ngClass]="{ 'custom-toast': true, 'error': isError, 'success': !isError }">
-  {{ messageText }}
+    {{ messageText }}
 </div>
-
 
 <div class="settings-container">
     <a routerLink="/profile" class="back-link"> ← zum Profil</a>
@@ -74,17 +65,11 @@
                 placeholder="Neues Passwort eingeben" />
 
             <button type="button" class="delete-button" (click)="deleteProfile()">
-                Profil löschen
+                Profil löschen - Anfrage
             </button>
         </div>
 
         <button type="submit">Speichern</button>
     </form>
-  <div *ngIf="successMessage" class="success-box">
-    {{ successMessage }}
-  </div>
 
-  <div *ngIf="errorMessage" class="error-box">
-    {{ errorMessage }}
-  </div>
 </div>
