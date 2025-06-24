@@ -51,7 +51,8 @@ in the kuvio-release directory, execute the following:
 
 ```bash
 docker-compose down -v
-rm -rf \*data
+# If you wish to delete all User Data
+rm -r *data
 ```
 
 You removed Kuvio 🥺😭
