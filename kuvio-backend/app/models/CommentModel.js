@@ -38,7 +38,6 @@ async function getCommentsByRecipeId(recipeId) {
             code: 200
         };
     } catch (err) {
-        console.error(err);
         return { message: 'An error occurred', code: 500 };
     }
 }
@@ -56,7 +55,6 @@ async function deleteComment(commentID, userID) {
 
         return { code: 200, message: 'Kommentar erfolgreich gelöscht' };
     } catch (err) {
-        console.error(err);
         return { code: 500, message: 'Fehler beim Löschen des Kommentars' };
     }
 }

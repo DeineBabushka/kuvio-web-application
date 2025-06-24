@@ -25,7 +25,6 @@ async function getOwnProfileAction(req, res) {
         const user = await get(userID);
         res.status(200).json(user.message);
     } catch (err) {
-        console.error(err);
         res.status(500).json({ error: 'Serverfehler' });
     }
 }
@@ -46,8 +45,10 @@ async function deleteUserAction(request, response) {
         if (!request.params.id) {
             return response.status(400).json({ error: 'No user specified' });
         }
+
         let userid = request.params.id
-        let status = await deleteUser(userid);
+        let action = request.headers.action
+        let status = await deleteUser(userid, action);
         response.status(status.code).json(status.message);
     } catch (error) {
         response.status(500).json({ error: error.message });

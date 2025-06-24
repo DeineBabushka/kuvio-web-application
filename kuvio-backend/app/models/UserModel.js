@@ -85,10 +85,16 @@ async function update(user) {
     return { message: 'User updated', code: 200 }
 }
 
-async function deleteUser(userid) {
+async function deleteUser(userid, action) {
     let conn = await pool.getConnection();
+    let deletionStatus = 1
+
+    if(action === "UNDO") {
+        deletionStatus = 0
+    }
+
     try {
-        const result = await conn.query('UPDATE user SET is_deleted = 1 WHERE userID = ?', [userid]);
+        await conn.query('UPDATE user SET is_deleted = ? WHERE userID = ?', [deletionStatus,userid]);
     } catch (err) {
         return { message: `An error occurred`, code: 500 };
     } finally {

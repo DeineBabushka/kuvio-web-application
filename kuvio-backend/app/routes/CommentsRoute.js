@@ -11,7 +11,7 @@ const {
 
 router.get('/recipe/:recipeID', getAllCommentsByRecipeIdAction);
 
-router.get('/user/:userID', isAuthenticated, getAllCommentsByUserIdAction);
+router.get('/user/:userID', getAllCommentsByUserIdAction);
 
 router.post('/', isAuthenticated, postCommentAction);
 
