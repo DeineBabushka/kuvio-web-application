@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const secret = process.env.JWT_SECRET
 
 async function login(user) {
-    const [rows] = await pool.query('SELECT * FROM user WHERE username = ?', [user.username]);
+    const [rows] = await pool.query('SELECT * FROM user WHERE username = ? AND is_deleted = 0', [user.username]);
 
     if (!rows || rows.length === 0) {
         return { message: `Benutzer existiert nicht`, code: 401 };

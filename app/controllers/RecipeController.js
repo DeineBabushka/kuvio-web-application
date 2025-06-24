@@ -6,7 +6,6 @@ async function getAllRecipesAction(req, res) {
     const recipes = await getAllRecipes();
     res.status(200).json(recipes);
   } catch (err) {
-    console.error('Fehler beim Abrufen der Rezepte:', err);
     res.status(500).json({ error: 'Fehler beim Abrufen der Rezepte' });
   }
 }
@@ -22,7 +21,6 @@ async function getRecipeByIdAction(req, res) {
 
     res.status(200).json(recipe);
   } catch (err) {
-    console.error('Fehler beim Abrufen des Rezepts:', err);
     res.status(500).json({ error: 'Fehler beim Abrufen des Rezepts' });
   }
 }

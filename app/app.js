@@ -15,7 +15,7 @@ const recipeRoutes = require('./routes/RecipeRoute');
 const commentsRoutes = require('./routes/CommentsRoute');
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Kleines Easteregg <3 Visit catb.it -Maximilian Schneider');
 });
 
 app.use('/api/favorites', favoriteRoutes);
@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/recipes', recipeRoutes);
 app.use('/api/comments', commentsRoutes);
 
-const uri = 'mongodb://127.0.0.1:27017';
+const uri = `mongodb://${process.env.MONGO_HOST}:27017`;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -36,7 +36,7 @@ const client = new MongoClient(uri, {
 async function runMongo() {
   try {
     await client.connect();
-    await client.db('mongo_fullstack_db').command({ ping: 1 });
+    await client.db(`${process.env.MONGO_DATABASE}`).command({ ping: 1 });
   } catch (err) {
   } finally {
     await client.close();
