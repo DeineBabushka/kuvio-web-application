@@ -7,23 +7,25 @@
           type="text"
           formControlName="search"
           placeholder=" z.B. Vegetarisch, Lasagne, Rindersteak"
-        />
+          />
+        </div>
+        <button class="filter-toggle" (click)="toggleFilterMenu()" aria-label="Filtermenü">🍴 Filter</button>
       </div>
-      <button class="filter-toggle" (click)="toggleFilterMenu()" aria-label="Filtermenü">🍴 Filter</button>
-    </div>
 
-    <div *ngIf="showFilterMenu" class="filter-menu">
-      <h3 class="filter-title">Diät-Typen</h3>
-      <div class="filter-group">
-        <label><input type="checkbox" formControlName="vegan"/> Vegan</label>
-        <label><input type="checkbox" formControlName="vegetarian"/> Vegetarisch</label>
-        <label><input type="checkbox" formControlName="glutenFree"/> Glutenfrei</label>
-        <label><input type="checkbox" formControlName="keto"/> Keto</label>
-        <label><input type="checkbox" formControlName="raw"/> Rohkost</label>
-        <label><input type="checkbox" formControlName="meat"/> Fleisch</label>
-        <label><input type="checkbox" formControlName="lowCalorie"/> Kalorienarm</label>
-        <label><input type="checkbox" formControlName="fish"/> Fisch</label>
-      </div>
+      @if (showFilterMenu) {
+        <div class="filter-menu">
+          <h3 class="filter-title">Diät-Typen</h3>
+          <div class="filter-group">
+            <label><input type="checkbox" formControlName="vegan"/> Vegan</label>
+            <label><input type="checkbox" formControlName="vegetarian"/> Vegetarisch</label>
+            <label><input type="checkbox" formControlName="glutenFree"/> Glutenfrei</label>
+            <label><input type="checkbox" formControlName="keto"/> Keto</label>
+            <label><input type="checkbox" formControlName="raw"/> Rohkost</label>
+            <label><input type="checkbox" formControlName="meat"/> Fleisch</label>
+            <label><input type="checkbox" formControlName="lowCalorie"/> Kalorienarm</label>
+            <label><input type="checkbox" formControlName="fish"/> Fisch</label>
+          </div>
+        </div>
+      }
     </div>
-  </div>
-</form>
+  </form>

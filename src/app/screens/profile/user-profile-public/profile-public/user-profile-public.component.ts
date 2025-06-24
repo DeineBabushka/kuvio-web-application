@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-user-profile-public',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './user-profile-public.component.html',
   styleUrls: ['./user-profile-public.component.css'],
 })

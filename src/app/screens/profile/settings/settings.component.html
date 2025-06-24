@@ -1,75 +1,81 @@
-<div *ngIf="showMessage" [ngClass]="{ 'custom-toast': true, 'error': isError, 'success': !isError }">
+@if (showMessage) {
+  <div [ngClass]="{ 'custom-toast': true, 'error': isError, 'success': !isError }">
     {{ messageText }}
-</div>
+  </div>
+}
 
 <div class="settings-container">
-    <a routerLink="/profile" class="back-link"> ← zum Profil</a>
+  <a routerLink="/profile" class="back-link"> ← zum Profil</a>
 
-    <h2>Profil bearbeiten von {{ profile.username || 'Benutzer' }}</h2>
+  <h2>Profil bearbeiten von {{ profile.username || 'Benutzer' }}</h2>
 
-    <form (ngSubmit)="saveProfile()" class="settings-form">
-        <div class="profile-picture-section">
-            <div class="profile-picture-wrapper" (click)="showAvatarSelection = !showAvatarSelection">
-                <img [src]="'assets/' + profile.picture" alt="Profilbild" class="profile-picture" />
-                <span class="edit-icon">✏️</span>
-            </div>
+  <form (ngSubmit)="saveProfile()" class="settings-form">
+    <div class="profile-picture-section">
+      <div class="profile-picture-wrapper" (click)="showAvatarSelection = !showAvatarSelection">
+        <img [src]="'assets/' + profile.picture" alt="Profilbild" class="profile-picture" />
+        <span class="edit-icon">✏️</span>
+      </div>
 
-            <div class="avatar-selection" *ngIf="showAvatarSelection">
-                <p>Wähle ein neues Profilbild:</p>
-                <div class="avatar-grid">
-                    <img *ngFor="let avatar of avatarOptions" [src]="'assets/' + avatar"
-                        [class.selected]="avatar === profile.picture" (click)="selectAvatar(avatar)" alt="Avatar" />
-                </div>
-            </div>
+      @if (showAvatarSelection) {
+        <div class="avatar-selection">
+          <p>Wähle ein neues Profilbild:</p>
+          <div class="avatar-grid">
+            @for (avatar of avatarOptions; track avatar) {
+              <img [src]="'assets/' + avatar"
+                [class.selected]="avatar === profile.picture" (click)="selectAvatar(avatar)" alt="Avatar" />
+            }
+          </div>
         </div>
-        <div class="edit-field">
-            <label>Vorname</label>
-            <div class="field-row">
-                <span class="old-value">{{ currentProfile.firstname || '—' }}</span>
-                <input type="text" [(ngModel)]="profile.firstname" name="firstname" />
-            </div>
-        </div>
+      }
+    </div>
+    <div class="edit-field">
+      <label>Vorname</label>
+      <div class="field-row">
+        <span class="old-value">{{ currentProfile.firstname || '—' }}</span>
+        <input type="text" [(ngModel)]="profile.firstname" name="firstname" />
+      </div>
+    </div>
 
-        <div class="edit-field">
-            <label>Nachname</label>
-            <div class="field-row">
-                <span class="old-value">{{ currentProfile.lastname || '—' }}</span>
-                <input type="text" [(ngModel)]="profile.lastname" name="lastname" />
-            </div>
-        </div>
+    <div class="edit-field">
+      <label>Nachname</label>
+      <div class="field-row">
+        <span class="old-value">{{ currentProfile.lastname || '—' }}</span>
+        <input type="text" [(ngModel)]="profile.lastname" name="lastname" />
+      </div>
+    </div>
 
-        <div class="edit-field">
-            <label>Präferenz</label>
-            <div class="field-row">
-                <span class="old-value">{{ currentProfile.preferences || '—' }}</span>
-                <select [(ngModel)]="profile.preferences" name="preferences">
-                    <option value="">— bitte auswählen —</option>
-                    <option value="Keine Angabe">Keine Angabe</option>
-                    <option value="Vegetarisch">Vegetarisch</option>
-                    <option value="Glutenfrei">Glutenfrei</option>
-                    <option value="Keto">Keto</option>
-                    <option value="Rohkost">Rohkost</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Fleisch">Fleisch</option>
-                    <option value="Kalorienarm">Kalorienarm</option>
-                    <option value="Fisch">Fisch</option>
+    <div class="edit-field">
+      <label>Präferenz</label>
+      <div class="field-row">
+        <span class="old-value">{{ currentProfile.preferences || '—' }}</span>
+        <select [(ngModel)]="profile.preferences" name="preferences">
+          <option value="">— bitte auswählen —</option>
+          <option value="Keine Angabe">Keine Angabe</option>
+          <option value="Vegetarisch">Vegetarisch</option>
+          <option value="Glutenfrei">Glutenfrei</option>
+          <option value="Keto">Keto</option>
+          <option value="Rohkost">Rohkost</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Fleisch">Fleisch</option>
+          <option value="Kalorienarm">Kalorienarm</option>
+          <option value="Fisch">Fisch</option>
 
-                </select>
-            </div>
-        </div>
+        </select>
+      </div>
+    </div>
 
 
-        <div class="edit-field">
-            <label>Passwort</label>
-            <input type="password" [(ngModel)]="profile.password" name="password"
-                placeholder="Neues Passwort eingeben" />
+    <div class="edit-field">
+      <label>Passwort</label>
+      <input type="password" [(ngModel)]="profile.password" name="password"
+        placeholder="Neues Passwort eingeben" />
 
-            <button type="button" class="delete-button" (click)="deleteProfile()">
-                Profil löschen - Anfrage
-            </button>
-        </div>
+        <button type="button" class="delete-button" (click)="deleteProfile()">
+          Profil löschen - Anfrage
+        </button>
+      </div>
 
-        <button type="submit">Speichern</button>
+      <button type="submit">Speichern</button>
     </form>
 
-</div>
+  </div>

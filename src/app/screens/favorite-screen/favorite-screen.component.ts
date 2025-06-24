@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router, RouterModule } from '@angular/router';
 import { FavoriteService } from '../../services/favorite.service';
 import { TokenService } from '../../services/token.service';
@@ -7,7 +7,7 @@ import { TokenService } from '../../services/token.service';
 @Component({
   selector: 'app-favorite-screen',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './favorite-screen.component.html',
   styleUrls: ['./favorite-screen.component.css']
 })

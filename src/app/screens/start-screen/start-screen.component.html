@@ -1,6 +1,8 @@
-<div *ngIf="tokenservice.isLoggedIn()" class="willkommen-box">
-  Willkommen zurück, {{ tokenservice.getUsername() }}!
-</div>
+@if (tokenservice.isLoggedIn()) {
+  <div class="willkommen-box">
+    Willkommen zurück, {{ tokenservice.getUsername() }}!
+  </div>
+}
 
 <section class="daily-recipe-section">
   <h2>Rezepte des Tages</h2>

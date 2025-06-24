@@ -1,20 +1,21 @@
-<div class="comments-section" *ngIf="comments().length > 0; else noComments">
+@if (comments().length > 0) {
+  <div class="comments-section">
     <h2 class="comment-title">Kommentare von <span>{{ username }}</span></h2>
-
-    <div *ngFor="let comment of comments()" class="comment-card">
+    @for (comment of comments(); track comment) {
+      <div class="comment-card">
         <p>
-            <strong>Rezept: </strong>
-            <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
+          <strong>Rezept: </strong>
+          <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
         </p>
-
         <p><strong>Bewertung:</strong> {{ comment.rating }} / 5</p>
         <p><strong>Kommentar:</strong> {{ comment.comment }}</p>
         <p><strong>Erstellt am:</strong> {{ comment.created_at | date: 'dd.MM.yyyy, HH:mm' }}</p>
-    </div>
-</div>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="no-comments">
+    <p>Dieser Nutzer hat noch keine Kommentare verfasst.</p>
+  </div>
+}
 
-<ng-template #noComments>
-    <div class="no-comments">
-        <p>Dieser Nutzer hat noch keine Kommentare verfasst.</p>
-    </div>
-</ng-template>
