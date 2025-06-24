@@ -1,21 +1,23 @@
-<div class="recipe-list-section" *ngIf="favorites().length > 0; else noFavorites">
+@if (favorites().length > 0) {
+  <div class="recipe-list-section">
     <h2 class="favorites-title">Favoriten von {{ username }}</h2>
-
     <div class="recipe-grid">
-        <div *ngFor="let recipe of favorites()" class="recipe-card">
-            <a class="card-content" [routerLink]="['/recipe', recipe._id]">
-                <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
-                <h3>{{ recipe.title }}</h3>
-            </a>
-            <div class="recipe-meta">
-                <span>{{ recipe.description }}</span>
-            </div>
+      @for (recipe of favorites(); track recipe) {
+        <div class="recipe-card">
+          <a class="card-content" [routerLink]="['/recipe', recipe._id]">
+            <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
+            <h3>{{ recipe.title }}</h3>
+          </a>
+          <div class="recipe-meta">
+            <span>{{ recipe.description }}</span>
+          </div>
         </div>
+      }
     </div>
-</div>
+  </div>
+} @else {
+  <div class="no-favorites">
+    <p>Dieser Nutzer hat noch keine Favoriten gespeichert.</p>
+  </div>
+}
 
-<ng-template #noFavorites>
-    <div class="no-favorites">
-        <p>Dieser Nutzer hat noch keine Favoriten gespeichert.</p>
-    </div>
-</ng-template>

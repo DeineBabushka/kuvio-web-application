@@ -1,22 +1,27 @@
-<div *ngIf="comments.length > 0" class="comments-section">
-  <h2 class="comment-title">Kommentare von <span>{{ profile?.username }}:</span></h2>
-
-  <div *ngFor="let comment of comments" class="comment-card">
-    <p>
-      <strong>Rezept: </strong>
-      <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
-    </p>
-
-    <p><strong>Bewertung: </strong> {{ comment.rating }} / 5</p>
-    <p><strong>Kommentar: </strong> {{ comment.comment }}</p>
-    <p><strong>Erstellt am: </strong> {{ comment.created_at | date:'dd.MM.yyyy, HH:mm' }}</p>
-
-    <button *ngIf="comment.userID === currentUserId" (click)="deleteComment(comment.commentID)" class="delete-button">
-      Kommentar löschen
-    </button>
+@if (comments.length > 0) {
+  <div class="comments-section">
+    <h2 class="comment-title">Kommentare von <span>{{ profile?.username }}:</span></h2>
+    @for (comment of comments; track comment) {
+      <div class="comment-card">
+        <p>
+          <strong>Rezept: </strong>
+          <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
+        </p>
+        <p><strong>Bewertung: </strong> {{ comment.rating }} / 5</p>
+        <p><strong>Kommentar: </strong> {{ comment.comment }}</p>
+        <p><strong>Erstellt am: </strong> {{ comment.created_at | date:'dd.MM.yyyy, HH:mm' }}</p>
+        @if (comment.userID === currentUserId) {
+          <button (click)="deleteComment(comment.commentID)" class="delete-button">
+            Kommentar löschen
+          </button>
+        }
+      </div>
+    }
   </div>
-</div>
+}
 
-<div *ngIf="comments.length === 0" class="no-comments">
-  <p>Keine Kommentare vorhanden.</p>
-</div>
+@if (comments.length === 0) {
+  <div class="no-comments">
+    <p>Keine Kommentare vorhanden.</p>
+  </div>
+}

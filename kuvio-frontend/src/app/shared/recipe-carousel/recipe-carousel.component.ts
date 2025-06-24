@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-recipe-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './recipe-carousel.component.html',
   styleUrls: ['./recipe-carousel.component.css']
 })

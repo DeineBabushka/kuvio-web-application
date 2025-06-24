@@ -1,9 +1,11 @@
 <section class="seasonal">
-    <h2>Saisonal & regional</h2>
-    <p>Im {{ currentMonthName }} besonders frisch:</p>
-    <ul>
-        <li *ngFor="let item of seasonalFoodsByMonth[currentMonthIndex]">
-            {{ item }}
-        </li>
-    </ul>
+  <h2>Saisonal & regional</h2>
+  <p>Im {{ currentMonthName }} besonders frisch:</p>
+  <ul>
+    @for (item of seasonalFoodsByMonth[currentMonthIndex]; track item) {
+      <li>
+        {{ item }}
+      </li>
+    }
+  </ul>
 </section>

@@ -1,26 +1,26 @@
 <app-search (searchResult)="setRecipes($event)"></app-search>
 
-<ng-container *ngIf="recipes.length > 0; else noRecipes">
+@if (recipes.length > 0) {
   <section class="recipe-list-section">
     <div class="recipe-grid">
-      <a
-        *ngFor="let recipe of recipes; trackBy: trackByRecipeId"
-        class="recipe-card"
-        [routerLink]="['/recipe', recipe._id]"
-      >
-        <img
-          [src]="'assets/' + recipe.image"
-          [alt]="recipe.title"
-        />
-        <h3>{{ recipe.title }}</h3>
-        <p>⌛ {{ recipe.preparation_time }}</p>
-      </a>
+      @for (recipe of recipes; track trackByRecipeId($index, recipe)) {
+        <a
+          class="recipe-card"
+          [routerLink]="['/recipe', recipe._id]"
+          >
+          <img
+            [src]="'assets/' + recipe.image"
+            [alt]="recipe.title"
+            />
+            <h3>{{ recipe.title }}</h3>
+            <p>⌛ {{ recipe.preparation_time }}</p>
+          </a>
+        }
+      </div>
+    </section>
+  } @else {
+    <div class="no-recipes">
+      <p>Keine Rezepte gefunden</p>
     </div>
-  </section>
-</ng-container>
+  }
 
-<ng-template #noRecipes>
-  <div class="no-recipes">
-    <p>Keine Rezepte gefunden</p>
-  </div>
-</ng-template>

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 
 
@@ -13,9 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    FooterComponent,
-    CommonModule
-  ],
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

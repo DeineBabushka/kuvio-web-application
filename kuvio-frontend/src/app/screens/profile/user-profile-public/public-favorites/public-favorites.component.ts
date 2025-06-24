@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../../../services/user.service';
@@ -14,7 +14,7 @@ interface Recipe {
 @Component({
   selector: 'app-public-favorites',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './public-favorites.component.html',
   styleUrls: ['./public-favorites.component.css']
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RecipeService } from '../../services/recipe.service';
 import { SeasonalComponent } from '../../shared/seasonal/seasonal.component';
 import { QuoteOfTheDayComponent } from '../../shared/quote-of-the-day/quote-of-the-day.component';
@@ -12,11 +12,10 @@ import { RecipeCarouselComponent } from '../../shared/recipe-carousel/recipe-car
   selector: 'app-start-screen',
   standalone: true,
   imports: [
-    CommonModule,
     SeasonalComponent,
     QuoteOfTheDayComponent,
     RecipeCarouselComponent
-  ],
+],
   templateUrl: './start-screen.component.html',
   styleUrls: ['./start-screen.component.css'],
 })

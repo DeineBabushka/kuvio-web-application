@@ -1,19 +1,23 @@
-<div class="carousel-wrapper" *ngIf="visibleRecipes.length > 0">
+@if (visibleRecipes.length > 0) {
+  <div class="carousel-wrapper">
     <div class="recipe-carousel">
-        <div class="recipe-card" *ngFor="let recipe of visibleRecipes" (click)="onCardClick(recipe._id)">
-            <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
-            <h3>{{ recipe.title }}</h3>
-            <p>⌛{{ recipe.preparation_time }}</p>
+      @for (recipe of visibleRecipes; track recipe) {
+        <div class="recipe-card" (click)="onCardClick(recipe._id)">
+          <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
+          <h3>{{ recipe.title }}</h3>
+          <p>⌛{{ recipe.preparation_time }}</p>
         </div>
+      }
     </div>
-
     <div class="nav-buttons">
-        <button class="nav-circle" (click)="prev()">❮</button>
-        <button class="nav-circle" (click)="next()">❯</button>
+      <button class="nav-circle" (click)="prev()">❮</button>
+      <button class="nav-circle" (click)="next()">❯</button>
     </div>
-
     <div class="dots">
-        <span *ngFor="let _ of recipes.slice(0, recipes.length - 4); let idx = index" class="dot"
-            [class.active]="idx === currentIndex"></span>
+      @for (_ of recipes.slice(0, recipes.length - 4); track _; let idx = $index) {
+        <span class="dot"
+        [class.active]="idx === currentIndex"></span>
+      }
     </div>
-</div>
+  </div>
+}
