@@ -1,8 +1,8 @@
-<div class="recipe-list-section" *ngIf="favorites.length > 0; else noFavorites">
+<div class="recipe-list-section" *ngIf="favorites().length > 0; else noFavorites">
     <h2 class="favorites-title">Favoriten von {{ username }}</h2>
 
     <div class="recipe-grid">
-        <div *ngFor="let recipe of favorites" class="recipe-card">
+        <div *ngFor="let recipe of favorites()" class="recipe-card">
             <a class="card-content" [routerLink]="['/recipe', recipe._id]">
                 <img [src]="'assets/' + recipe.image" [alt]="recipe.title" />
                 <h3>{{ recipe.title }}</h3>

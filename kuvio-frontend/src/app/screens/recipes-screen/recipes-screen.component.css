@@ -48,3 +48,16 @@
   font-size: 0.9rem;
   color: #555;
 }
+
+.no-recipes {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 2rem;
+  color: #444;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+}
+

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { UserService } from '../../../services/user.service';
+import { TokenService } from '../../../services/token.service';
+
 
 @Component({
   selector: 'app-settings',
@@ -37,11 +39,14 @@ export class SettingsComponent implements OnInit {
   showAvatarSelection = false;
   avatarOptions: string[] = Array.from({ length: 9 }, (_, i) => `character_${i + 1}.png`);
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private userService: UserService,
+    private tokenService: TokenService
+  ) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:3000/api/user/profile').subscribe({
-      next: (data) => {
+    this.userService.getProfile().subscribe({
+      next: (data: any) => {
         this.profile.username = data.username;
         this.profile.picture = data.picture;
 
@@ -56,7 +61,9 @@ export class SettingsComponent implements OnInit {
         this.profile.lastname = data.lastname;
         this.profile.preferences = data.preferences;
       },
-      error: (err) => console.error('Fehler beim Laden des Profils:', err)
+      error: (err: any) => {
+        this.showToast('Profil konnte nicht geladen werden.', true);
+      }
     });
   }
 
@@ -66,9 +73,8 @@ export class SettingsComponent implements OnInit {
   }
 
   saveProfile(): void {
-    const userId = this.getUserIdFromToken();
-    if (userId === -1) {
-      console.error('Kein gültiger Token gefunden');
+    const userId = this.tokenService.getUserId();
+    if (!userId) {
       return;
     }
 
@@ -101,23 +107,21 @@ export class SettingsComponent implements OnInit {
         /[^A-Za-z0-9]/.test(password);
 
       if (!isValidPassword) {
-  this.showToast(
-    'Das Passwort muss mindestens 8 Zeichen lang sein und einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen enthalten.',
-    true
-  );
-  return;
-}
-
+        this.showToast(
+          'Das Passwort muss mindestens 8 Zeichen lang sein und einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen enthalten.',
+          true
+        );
+        return;
+      }
 
       body.password = password;
     }
 
     if (Object.keys(body).length === 0) {
-      console.warn('Keine Änderungen erkannt.');
       return;
     }
 
-    this.http.put(`http://localhost:3000/api/user/${userId}`, body).subscribe({
+    this.userService.updateProfile(userId, body).subscribe({
       next: () => {
         this.currentProfile = {
           firstname: this.profile.firstname,
@@ -128,42 +132,29 @@ export class SettingsComponent implements OnInit {
 
         this.profile.password = '';
         this.showToast('Deine Profildaten wurden erfolgreich aktualisiert.', false);
+      },
+      error: () => {
+        this.showToast('Fehler beim Aktualisieren des Profils.', true);
       }
     });
   }
 
-  private getUserIdFromToken(): number {
-    const token = localStorage.getItem('token');
-    if (!token) return -1;
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload.id || -1;
-    } catch (e) {
-      return -1;
-    }
-  }
-
   deleteProfile(): void {
-    const confirmed = confirm('Möchtest du dein Profil wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.');
-
+    const confirmed = confirm('Möchtest du dein Profil wirklich löschen?');
     if (!confirmed) return;
 
-    const userId = this.getUserIdFromToken();
-    if (userId === -1) {
-      console.error('Kein gültiger Token gefunden');
+    const userId = this.tokenService.getUserId();
+    if (!userId) {
       return;
     }
 
-    this.http.delete(`http://localhost:3000/api/user/${userId}`).subscribe({
+    this.userService.deleteProfile(userId).subscribe({
       next: () => {
-        localStorage.removeItem('token');
+        this.tokenService.logout();
         this.showToast('Dein Profil wurde gelöscht.', false);
-        setTimeout(() => {
-          window.location.href = '/';
-        }, 2000);
+        setTimeout(() => window.location.href = '/', 2000);
       },
-      error: (err) => {
-        console.error('Fehler beim Löschen des Profils:', err);
+      error: () => {
         this.showToast('Fehler beim Löschen des Profils.', true);
       }
     });
@@ -174,8 +165,6 @@ export class SettingsComponent implements OnInit {
     this.isError = error;
     this.showMessage = true;
 
-    setTimeout(() => {
-      this.showMessage = false;
-    }, 5000);
+    setTimeout(() => this.showMessage = false, 5000);
   }
 }

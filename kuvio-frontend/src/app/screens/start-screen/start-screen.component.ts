@@ -3,52 +3,41 @@ import { CommonModule } from '@angular/common';
 import { RecipeService } from '../../services/recipe.service';
 import { SeasonalComponent } from '../../shared/seasonal/seasonal.component';
 import { QuoteOfTheDayComponent } from '../../shared/quote-of-the-day/quote-of-the-day.component';
-import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { TokenService } from '../../services/token.service';
+import { RecipeCarouselComponent } from '../../shared/recipe-carousel/recipe-carousel.component';
+
 
 @Component({
   selector: 'app-start-screen',
   standalone: true,
-  imports: [CommonModule, SeasonalComponent, QuoteOfTheDayComponent],
+  imports: [
+    CommonModule,
+    SeasonalComponent,
+    QuoteOfTheDayComponent,
+    RecipeCarouselComponent
+  ],
   templateUrl: './start-screen.component.html',
   styleUrls: ['./start-screen.component.css'],
 })
 export class StartScreenComponent implements OnInit {
   recipes: any[] = [];
-  visibleRecipes: any[] = [];
-  currentIndex = 0;
 
   constructor(
     public recipeService: RecipeService,
-    public auth: AuthService,
+    public tokenservice: TokenService,
     private router: Router
   ) { }
 
-
   ngOnInit(): void {
-    this.recipeService.getRandomRecipes().subscribe((res: any[]) => {
-      console.log('API-Antwort:', res);
-      this.recipes = res;
-      this.updateVisibleRecipes();
+    this.recipeService.getRandomRecipes().subscribe({
+      next: (res: any[]) => {
+        this.recipes = res;
+      },
+      error: (err) => {
+        alert('Fehler beim Laden der Rezepte');
+      }
     });
-  }
-
-  updateVisibleRecipes(): void {
-    this.visibleRecipes = this.recipes.slice(this.currentIndex, this.currentIndex + 5);
-  }
-
-  nextRecipe(): void {
-    if (this.currentIndex + 5 < this.recipes.length) {
-      this.currentIndex++;
-      this.updateVisibleRecipes();
-    }
-  }
-
-  prevRecipe(): void {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.updateVisibleRecipes();
-    }
   }
 
   goToRecipeDetail(recipeId: string): void {

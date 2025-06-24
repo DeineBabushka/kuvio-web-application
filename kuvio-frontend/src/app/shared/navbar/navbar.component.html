@@ -7,15 +7,15 @@
 
   <a routerLink="/recipe" routerLinkActive="active">Rezepte</a>
 
-  <ng-container *ngIf="auth.isLoggedIn()">
+  <ng-container *ngIf="tokenservice.isLoggedIn()">
     <a routerLink="/profile/favorites" routerLinkActive="active">Favoriten</a>
   </ng-container>
 
-  <ng-container *ngIf="auth.isAdmin()">
+  <ng-container *ngIf="tokenservice.isAdmin()">
     <a routerLink="/admin-dashboard" routerLinkActive="active">Admin-Dashboard</a>
   </ng-container>
 
-  <ng-container *ngIf="auth.isLoggedIn(); else loginLink">
+  <ng-container *ngIf="tokenservice.isLoggedIn(); else loginLink">
     <a routerLink="/profile">Konto</a>
     <a href="#" (click)="logout()" class="logout-link">Logout</a>
   </ng-container>

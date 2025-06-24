@@ -1,7 +1,7 @@
-<div class="comments-section" *ngIf="comments.length > 0; else noComments">
+<div class="comments-section" *ngIf="comments().length > 0; else noComments">
     <h2 class="comment-title">Kommentare von <span>{{ username }}</span></h2>
 
-    <div *ngFor="let comment of comments" class="comment-card">
+    <div *ngFor="let comment of comments()" class="comment-card">
         <p>
             <strong>Rezept: </strong>
             <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>

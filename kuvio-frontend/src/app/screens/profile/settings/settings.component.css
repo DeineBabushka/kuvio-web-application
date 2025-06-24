@@ -150,39 +150,54 @@ select {
 }
 
 .custom-toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  animation: fadeInOut 4.8s ease-in-out;
-  opacity: 0;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeInOut 4.8s ease-in-out;
+    opacity: 0;
 }
 
 .custom-toast.error {
-  background-color: #122620;
+    background-color: #122620;
 }
 
 .custom-toast.success {
-  background-color: #122620;
+    background-color: #122620;
 }
 
 @keyframes fadeInOut {
-  0%   { opacity: 0; transform: translateX(-50%) translateY(10px); }
-  10%  { opacity: 1; transform: translateX(-50%) translateY(0); }
-  80%  { opacity: 1; transform: translateX(-50%) translateY(0); }
-  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
 
 .delete-button {
     margin-top: 0.5rem;
-    margin-left: 15rem;
+    margin-left: 10rem;
     padding: 0.6rem 1.2rem;
     background-color: #aa2e2e;
     color: white;
