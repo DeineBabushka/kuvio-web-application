@@ -12,7 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - ./kuvio-backend/database/mariadb-init:/docker-entrypoint-initdb.d
-      - ./kuvio-backend/database/mariadb-data:/var/lib/mysql
+      - ./mariadb-data:/var/lib/mysql
     networks:
       - kuvio-net
 
@@ -27,7 +27,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./kuvio-backend/database/mongodb_data:/data/db
+      - ./mongodb_data:/data/db
       - ./kuvio-backend/database/mongodb-init:/docker-entrypoint-initdb.d
     networks:
       - kuvio-net
