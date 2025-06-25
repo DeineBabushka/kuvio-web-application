@@ -8,44 +8,30 @@ CREATE TABLE user
     password   VARCHAR(255),
     role       ENUM('user', 'admin') DEFAULT 'user',
     preferences ENUM('Vegetarisch','Glutenfrei','Keto','Rohkost','Vegan','Fleisch','Kalorienarm','Fisch','Keine Angabe') DEFAULT 'Keine Angabe',
-    is_deleted BOOLEAN DEFAULT 0 -- um Soft Deletes zu ermöglichen , also nicht wirklich löschen, sondern als "gelöscht markieren"
+    is_deleted BOOLEAN DEFAULT 0
 );
--- Nuter kann sich nicht mehr einloggen und Admins können ihn später löschen
-
--- Notiz an mich: Enum verwendet, weil es auf erlaubte Rollen einschränkt!
-
-CREATE TABLE deletion_requests
-(
-    requestID  INT AUTO_INCREMENT PRIMARY KEY,
-    userID     VARCHAR(36),
-    recipeID   VARCHAR(24),
-    type       ENUM('account', 'recipe'),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userID) REFERENCES user (userID)
-);
-
--- Lösch-Anfrage: Wenn User die Löschung des Kontos/Rezepts anfragt, kann ich somit in einer zusätzlichen Tabelle speichern.
--- So könnte Admin sehen: User X will Rezept Y löschen und kann dies über Admin-Dashboard bestätigen.
 
 CREATE TABLE user_favorite
 (
-    userID   VARCHAR(36),                                 -- Referenz auf User, dem Rezept gefällt
-    recipeID VARCHAR(24),                         -- Die ID des Rezepts aus MongoDB, deshalb VARCHAR(24) – weil MongoDB ObjectIds immer 24 Zeichen lange Strings sind
-    PRIMARY KEY (userID, recipeID),               -- Kombiniert beide -> Verhindert Verdopplung - User kann so Rezept nur 1x liken
-    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE CASCADE -- userID mit User-Tabelle
+    userID   VARCHAR(36),
+    recipeID VARCHAR(24),
+    PRIMARY KEY (userID, recipeID),
+    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE CASCADE
 );
-
--- Speichert Lieblingsrezepte der User
 
 CREATE TABLE comments_ratings
-(                                                 --
-    commentID  INT AUTO_INCREMENT PRIMARY KEY,    -- ID fpr jeden Kommentar (eindeutig)
-    userID     VARCHAR(36),                               -- Wer kommentar abgegeben hat
-    recipeID   VARCHAR(24),                       -- Verweis auf MongoDB-Dokument
-    rating     INT,                               -- z.B. 1-5 Sterne
-    comment    TEXT,                              -- Kommentar an sich
+(
+    commentID  INT AUTO_INCREMENT PRIMARY KEY,
+    userID     VARCHAR(36),
+    recipeID   VARCHAR(24),
+    rating     INT,
+    comment    TEXT,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE CASCADE -- userID, recipeID
+    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE CASCADE
 );
--- Speichert kommentare und Bewertungen zu Rezepten
+
+INSERT INTO user (userID, picture, firstname, lastname, username, password, role, preferences)
+VALUES
+    ('11111111-aaaa-bbbb-cccc-111111111111', 'character_6.png', 'John', 'Wick', 'admin', '$2b$10$K1NaagcnclmC2nKQ8ZvGyezBF0sc9v1MXRyx0L/2VUYEniL0vTtw.', 'admin', 'Vegan'),
+    ('22222222-aaaa-bbbb-cccc-222222222222', 'character_5.png', 'Jonas', 'Schmidt', 'test', '$2b$10$K1NaagcnclmC2nKQ8ZvGyezBF0sc9v1MXRyx0L/2VUYEniL0vTtw.', 'user', 'Fleisch')

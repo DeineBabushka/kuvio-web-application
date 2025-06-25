@@ -8,6 +8,7 @@ services:
       MARIADB_DATABASE: fullstack_db
       MARIADB_USER: fs_user
       MARIADB_PASSWORD: fs_pw
+      TZ: Europe/Berlin
     ports:
       - "3306:3306"
     volumes:
@@ -24,6 +25,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: 'mongo_fs_user'
       MONGO_INITDB_ROOT_PASSWORD: 'mongo_fs_pw'
       MONGO_INITDB_DATABASE: 'mongo_fullstack_db'
+      TZ: Europe/Berlin
     ports:
       - "27017:27017"
     volumes:
