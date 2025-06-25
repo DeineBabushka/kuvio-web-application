@@ -1,7 +1,7 @@
 db = db.getSiblingDB('mongo_fullstack_db');
 
 db.recipes.insertMany([
-{
+  {
     title: "Gemüsepfanne mit Halloumi",
     image: "recipe_1.jpg",
     portions: 2,
@@ -32,10 +32,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 490,
@@ -45,7 +41,7 @@ db.recipes.insertMany([
     },
     id: "2d5d3a48-2f8d-4c9d-9e96-30b8bf56b0d4"
   },
-{
+  {
     title: "Tomaten-Mozzarella-Salat mit Basilikum",
     image: "recipe_2.jpg",
     portions: 2,
@@ -72,10 +68,6 @@ db.recipes.insertMany([
       "Keto",
       "Rohkost",
     ],
-    categories: [
-      "Vorspeise",
-      "Kalorienarm"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 310,
@@ -85,7 +77,7 @@ db.recipes.insertMany([
     },
     id: "688982a6-9622-4352-9caf-7fd4cd7bdae8"
   },
-{
+  {
     title: "Zucchini-Nudeln mit Pesto",
     image: "recipe_3.jpg",
     portions: 2,
@@ -113,10 +105,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 370,
@@ -126,7 +114,7 @@ db.recipes.insertMany([
     },
     id: "de19d576-4538-4f4d-aac0-4b5e5b33f869"
   },
-{
+  {
     title: "Vegetarisches Chili sin Carne",
     image: "recipe_4.jpg",
     portions: 2,
@@ -158,9 +146,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 430,
@@ -170,7 +155,7 @@ db.recipes.insertMany([
     },
     id: "4dfbf828-f4c9-49dd-9403-0180d14aceb4"
   },
-{
+  {
     title: "Rührei mit Champignons",
     image: "recipe_5.jpg",
     portions: 2,
@@ -196,10 +181,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Frühstück",
-      "Hauptgericht"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 390,
@@ -209,7 +190,7 @@ db.recipes.insertMany([
     },
     id: "c0e7d806-d046-4323-99c8-ddaf48557e96"
   },
-{
+  {
     title: "Gemüsesuppe mit Lauch und Karotten",
     image: "recipe_6.jpg",
     portions: 2,
@@ -237,11 +218,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Vorspeise",
-      "Kalorienarm",
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 200,
@@ -251,7 +227,7 @@ db.recipes.insertMany([
     },
     id: "cf8c264e-21d7-48bf-9fcd-314d92c04ed6"
   },
-{
+  {
     title: "Kartoffelgratin mit Käse",
     image: "recipe_7.jpg",
     portions: 2,
@@ -277,10 +253,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Hauptgericht"
-    ],
     preparation_time: "50 Minuten",
     nutrition: {
       calories: 560,
@@ -290,7 +262,7 @@ db.recipes.insertMany([
     },
     id: "2bbbf7c2-e7aa-4bd0-bdca-51f465f11c5d"
   },
-{
+  {
     title: "Auberginenröllchen mit Ricotta",
     image: "recipe_8.jpg",
     portions: 2,
@@ -316,11 +288,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Vorspeise",
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 320,
@@ -330,7 +297,7 @@ db.recipes.insertMany([
     },
     id: "b09c9751-f767-4cbb-9b58-2ae038b500c2"
   },
-{
+  {
     title: "Vegetarischer Linseneintopf",
     image: "recipe_9.jpg",
     portions: 2,
@@ -359,10 +326,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 410,
@@ -372,7 +335,7 @@ db.recipes.insertMany([
     },
     id: "c4d7fe55-cb79-47a0-93d5-55514e312bf7"
   },
-{
+  {
     title: "Bulgursalat mit Gemüse",
     image: "recipe_10.jpg",
     portions: 2,
@@ -400,11 +363,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Kalorienarm",
-      "Snack"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 360,
@@ -414,7 +372,7 @@ db.recipes.insertMany([
     },
     id: "30b52db9-33fa-402b-b2ad-123046d51531"
   },
-{
+  {
     title: "Vegetarischer Wrap mit Hummus",
     image: "recipe_11.jpg",
     portions: 2,
@@ -441,11 +399,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Snack",
-      "Kalorienarm",
-      "Hauptgericht"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 420,
@@ -455,7 +408,7 @@ db.recipes.insertMany([
     },
     id: "2bf4fe92-712f-4e90-bdec-cf2eb39fc389"
   },
-{
+  {
     title: "Käse-Rührei mit Paprika",
     image: "recipe_12.jpg",
     portions: 2,
@@ -482,10 +435,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Frühstück",
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 440,
@@ -495,7 +444,7 @@ db.recipes.insertMany([
     },
     id: "e9d04a67-57de-43a7-8670-75073f320b90"
   },
-{
+  {
     title: "Ofen-Kartoffeln mit Quark-Dip",
     image: "recipe_13.jpg",
     portions: 2,
@@ -519,10 +468,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Beilage"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 470,
@@ -532,7 +477,7 @@ db.recipes.insertMany([
     },
     id: "c04a338c-d233-4697-999f-65dde897bcf8"
   },
-{
+  {
     title: "Paprika-Tomaten-Omelett",
     image: "recipe_14.jpg",
     portions: 2,
@@ -559,11 +504,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Frühstück",
-      "Kalorienarm",
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 390,
@@ -573,7 +513,7 @@ db.recipes.insertMany([
     },
     id: "6e3a1f2b-2119-4b65-87ab-6f2ba9b11554"
   },
-{
+  {
     title: "Griechischer Salat mit Feta",
     image: "recipe_15.jpg",
     portions: 2,
@@ -600,11 +540,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Rohkost",
     ],
-    categories: [
-      "Beilage",
-      "Kalorienarm",
-      "Vorspeise"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 330,
@@ -614,7 +549,7 @@ db.recipes.insertMany([
     },
     id: "4c88a1e2-cb59-4594-ab87-b1e9a97e88f2"
   },
-{
+  {
     title: "Linsen-Curry mit Kokosmilch",
     image: "recipe_16.jpg",
     portions: 2,
@@ -643,9 +578,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 510,
@@ -655,7 +587,7 @@ db.recipes.insertMany([
     },
     id: "a9663e04-789f-4b29-a1ef-99704bec1fe6"
   },
-{
+  {
     title: "Vegane Bolognese mit Linsen",
     image: "recipe_17.jpg",
     portions: 2,
@@ -684,9 +616,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 560,
@@ -696,7 +625,7 @@ db.recipes.insertMany([
     },
     id: "8decf1d9-fd16-40d1-88bb-ad11dd78aa2e"
   },
-{
+  {
     title: "Quinoasalat mit Avocado und Mango",
     image: "recipe_18.jpg",
     portions: 2,
@@ -723,11 +652,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Kalorienarm",
-      "Snack"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 430,
@@ -737,7 +661,7 @@ db.recipes.insertMany([
     },
     id: "74fbe815-b8b5-46d7-93c5-fdebc51884a9"
   },
-{
+  {
     title: "Vegane Gemüsepfanne mit Tofu",
     image: "recipe_19.jpg",
     portions: 2,
@@ -765,10 +689,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 480,
@@ -778,7 +698,7 @@ db.recipes.insertMany([
     },
     id: "bd4ee6e0-ae93-4d2f-98ef-3925ac6ead8c"
   },
-{
+  {
     title: "Vegane Kürbissuppe mit Kokos",
     image: "recipe_20.jpg",
     portions: 2,
@@ -806,11 +726,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Vorspeise",
-      "Kalorienarm",
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 400,
@@ -820,7 +735,7 @@ db.recipes.insertMany([
     },
     id: "b1885e82-ff8e-4ecc-ad1b-a8ca80a09b8d"
   },
-{
+  {
     title: "Vegane Falafel mit Tahinisoße",
     image: "recipe_21.jpg",
     portions: 2,
@@ -845,10 +760,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 460,
@@ -858,7 +769,7 @@ db.recipes.insertMany([
     },
     id: "41002b4b-e062-4b44-b773-481edbba0ecf"
   },
-{
+  {
     title: "Zucchini-Spaghetti mit Tomatensugo",
     image: "recipe_22.jpg",
     portions: 2,
@@ -886,10 +797,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 280,
@@ -899,7 +806,7 @@ db.recipes.insertMany([
     },
     id: "cdb8d1b3-0cb8-44bd-9995-0fa9d19747bb"
   },
-{
+  {
     title: "Avocado-Toast mit Tomaten",
     image: "recipe_23.jpg",
     portions: 2,
@@ -923,10 +830,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Frühstück",
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 420,
@@ -936,7 +839,7 @@ db.recipes.insertMany([
     },
     id: "3f11e91d-f8b3-4b65-ac9d-006869d09836"
   },
-{
+  {
     title: "Süßkartoffel-Curry mit Kichererbsen",
     image: "recipe_24.jpg",
     portions: 2,
@@ -961,9 +864,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 540,
@@ -973,7 +873,7 @@ db.recipes.insertMany([
     },
     id: "3941ac0b-fd76-4996-8c31-6b1026f06b3f"
   },
-{
+  {
     title: "Veganes Bananen-Porridge",
     image: "recipe_25.jpg",
     portions: 2,
@@ -996,10 +896,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Frühstück",
-      "Kalorienarm"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 380,
@@ -1009,7 +905,7 @@ db.recipes.insertMany([
     },
     id: "59480252-8afb-40c6-a93b-14d806f18669"
   },
-{
+  {
     title: "Gerösteter Blumenkohl mit Tahini-Dip",
     image: "recipe_26.jpg",
     portions: 2,
@@ -1036,11 +932,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Beilage",
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 300,
@@ -1050,7 +941,7 @@ db.recipes.insertMany([
     },
     id: "18826ab9-80ed-48ea-af45-d0639c92a098"
   },
-{
+  {
     title: "Vegane Reispfanne mit Gemüse",
     image: "recipe_27.jpg",
     portions: 2,
@@ -1075,9 +966,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 440,
@@ -1087,7 +975,7 @@ db.recipes.insertMany([
     },
     id: "f3c9113e-328e-447f-89d5-e3fbe4cac91e"
   },
-{
+  {
     title: "Rohkostsalat mit Apfel und Karotte",
     image: "recipe_28.jpg",
     portions: 2,
@@ -1109,11 +997,6 @@ db.recipes.insertMany([
       "Rohkost",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Kalorienarm",
-      "Snack"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 220,
@@ -1123,7 +1006,7 @@ db.recipes.insertMany([
     },
     id: "0924066b-496f-4362-87d8-1f6915045e9d"
   },
-{
+  {
     title: "Veganes Kartoffelgulasch",
     image: "recipe_29.jpg",
     portions: 2,
@@ -1150,9 +1033,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 400,
@@ -1162,7 +1042,7 @@ db.recipes.insertMany([
     },
     id: "d1153946-ce75-485e-b5d8-7b9b62988e6d"
   },
-{
+  {
     title: "Vegane Schoko-Chia-Pudding",
     image: "recipe_30.jpg",
     portions: 2,
@@ -1184,11 +1064,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Dessert",
-      "Kalorienarm",
-      "Snack"
-    ],
     preparation_time: "5 Minuten + Kühlzeit",
     nutrition: {
       calories: 280,
@@ -1198,7 +1073,7 @@ db.recipes.insertMany([
     },
     id: "2b4bbf76-be5e-4afe-8250-62af98a4c9da"
   },
-{
+  {
     title: "Hähnchenbrust mit Gemüse aus dem Ofen",
     image: "recipe_31.jpg",
     portions: 2,
@@ -1225,10 +1100,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 520,
@@ -1238,7 +1109,7 @@ db.recipes.insertMany([
     },
     id: "95507a7a-8ba6-4e17-8bd2-7968cdef4591"
   },
-{
+  {
     title: "Spaghetti Bolognese mit Rinderhack",
     image: "recipe_32.jpg",
     portions: 2,
@@ -1264,9 +1135,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 680,
@@ -1276,7 +1144,7 @@ db.recipes.insertMany([
     },
     id: "d7f427ea-d7fe-4dab-81b3-f3f44b91b2cb"
   },
-{
+  {
     title: "Gefüllte Paprika mit Hackfleisch",
     image: "recipe_33.jpg",
     portions: 2,
@@ -1302,9 +1170,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "50 Minuten",
     nutrition: {
       calories: 580,
@@ -1314,7 +1179,7 @@ db.recipes.insertMany([
     },
     id: "2a278182-1fea-425d-b78c-ba22b560360d"
   },
-{
+  {
     title: "Putengeschnetzeltes mit Champignons",
     image: "recipe_34.jpg",
     portions: 2,
@@ -1340,10 +1205,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 490,
@@ -1353,7 +1214,7 @@ db.recipes.insertMany([
     },
     id: "2d65492a-d716-4a3b-a9c9-5cd24ac69b99"
   },
-{
+  {
     title: "Rindersteak mit Ofenkartoffeln",
     image: "recipe_35.jpg",
     portions: 2,
@@ -1375,9 +1236,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 670,
@@ -1387,7 +1245,7 @@ db.recipes.insertMany([
     },
     id: "1bceaad1-9803-417a-a60c-f1010eee529d"
   },
-{
+  {
     title: "Chicken Caesar Wrap",
     image: "recipe_36.jpg",
     portions: 2,
@@ -1410,10 +1268,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Snack",
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 510,
@@ -1423,7 +1277,7 @@ db.recipes.insertMany([
     },
     id: "d1923d3a-6916-4e99-8bb2-363cf3f100eb"
   },
-{
+  {
     title: "Hackbällchen in Tomatensauce",
     image: "recipe_37.jpg",
     portions: 2,
@@ -1448,9 +1302,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 590,
@@ -1460,7 +1311,7 @@ db.recipes.insertMany([
     },
     id: "d49b9c41-c14c-441c-bcc7-8f70e0af9f60"
   },
-{
+  {
     title: "Hähnchensalat mit Avocado",
     image: "recipe_38.jpg",
     portions: 2,
@@ -1485,11 +1336,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Salat",
-      "Kalorienarm",
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 430,
@@ -1499,7 +1345,7 @@ db.recipes.insertMany([
     },
     id: "6d082736-1146-4d63-89f2-45c0369431a6"
   },
-{
+  {
     title: "Würzige Hähnchenpfanne mit Paprika",
     image: "recipe_39.jpg",
     portions: 2,
@@ -1524,10 +1370,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 470,
@@ -1537,7 +1379,7 @@ db.recipes.insertMany([
     },
     id: "f89d2346-23ed-4447-b7c6-ac3c1dc17191"
   },
-{
+  {
     title: "Schweinefilet mit Kräuterkruste",
     image: "recipe_40.jpg",
     portions: 2,
@@ -1563,9 +1405,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 520,
@@ -1575,7 +1414,7 @@ db.recipes.insertMany([
     },
     id: "c9b3adb1-3de1-441d-bf67-cb2ee115a0c0"
   },
-{
+  {
     title: "Hähnchencurry mit Reis",
     image: "recipe_41.jpg",
     portions: 2,
@@ -1600,9 +1439,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 620,
@@ -1612,7 +1448,7 @@ db.recipes.insertMany([
     },
     id: "a994584b-277f-4cac-bd4f-c74c1d16ae76"
   },
-{
+  {
     title: "Hähnchenschenkel mit Süßkartoffeln",
     image: "recipe_42.jpg",
     portions: 2,
@@ -1635,10 +1471,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "45 Minuten",
     nutrition: {
       calories: 610,
@@ -1648,7 +1480,7 @@ db.recipes.insertMany([
     },
     id: "32eb1ff9-76bc-4499-b9b0-eee199e0d716"
   },
-{
+  {
     title: "Frikadellen mit Kartoffelpüree",
     image: "recipe_43.jpg",
     portions: 2,
@@ -1674,9 +1506,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 680,
@@ -1686,7 +1515,7 @@ db.recipes.insertMany([
     },
     id: "f78ea8d6-ceb0-4035-968e-23ed429e0800"
   },
-{
+  {
     title: "Putensteak mit Grillgemüse",
     image: "recipe_44.jpg",
     portions: 2,
@@ -1710,10 +1539,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 460,
@@ -1723,7 +1548,7 @@ db.recipes.insertMany([
     },
     id: "a5d8865e-966c-46e0-9d9e-b8c356c8d081"
   },
-{
+  {
     title: "Hähnchen-Gemüse-Wok",
     image: "recipe_45.jpg",
     portions: 2,
@@ -1746,10 +1571,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 510,
@@ -1759,7 +1580,7 @@ db.recipes.insertMany([
     },
     id: "9d421e11-9cfe-4c6c-8c0a-a6b88add6ddb"
   },
-{
+  {
     title: "Lachsfilet mit Zitronen-Dill-Soße",
     image: "recipe_46.jpg",
     portions: 2,
@@ -1786,9 +1607,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 520,
@@ -1798,7 +1616,7 @@ db.recipes.insertMany([
     },
     id: "f72b2cc4-cc3d-46a0-a523-ed8390e4eb05"
   },
-{
+  {
     title: "Fischcurry mit Kokosmilch",
     image: "recipe_47.jpg",
     portions: 2,
@@ -1827,9 +1645,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 480,
@@ -1839,7 +1654,7 @@ db.recipes.insertMany([
     },
     id: "48f8b685-b7dc-4ee3-937b-3bc06a63164f"
   },
-{
+  {
     title: "Thunfischsalat mit weißen Bohnen",
     image: "recipe_48.jpg",
     portions: 2,
@@ -1866,11 +1681,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Kalorienarm",
     ],
-    categories: [
-      "Salat",
-      "Beilage",
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 360,
@@ -1880,7 +1690,7 @@ db.recipes.insertMany([
     },
     id: "cebc4261-1729-492a-9e56-51efe1cfbbbe"
   },
-{
+  {
     title: "Forelle Müllerin Art",
     image: "recipe_49.jpg",
     portions: 2,
@@ -1903,9 +1713,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 540,
@@ -1915,7 +1722,7 @@ db.recipes.insertMany([
     },
     id: "b32c25ac-8f1c-4f3a-820d-f81648416f15"
   },
-{
+  {
     title: "Ofenlachs mit Kräuterkruste",
     image: "recipe_50.jpg",
     portions: 2,
@@ -1940,9 +1747,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 510,
@@ -1952,7 +1756,7 @@ db.recipes.insertMany([
     },
     id: "58586e50-f2e0-49cd-9d96-153f18e66ef5"
   },
-{
+  {
     title: "Gebratene Garnelen mit Knoblauch und Chili",
     image: "recipe_51.jpg",
     portions: 2,
@@ -1980,10 +1784,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 320,
@@ -1993,7 +1793,7 @@ db.recipes.insertMany([
     },
     id: "8a7c21ab-1716-4344-9d21-e9ff4042450c"
   },
-{
+  {
     title: "Fischfrikadellen mit Kartoffelstampf",
     image: "recipe_52.jpg",
     portions: 2,
@@ -2022,9 +1822,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 590,
@@ -2034,7 +1831,7 @@ db.recipes.insertMany([
     },
     id: "272a1567-3c0a-461a-ba0f-9273ef6deec3"
   },
-{
+  {
     title: "Thunfisch-Pasta mit Tomaten und Oliven",
     image: "recipe_53.jpg",
     portions: 2,
@@ -2062,9 +1859,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 570,
@@ -2074,7 +1868,7 @@ db.recipes.insertMany([
     },
     id: "c8d9fdeb-c36d-4a8c-9a47-384aa91e3f5c"
   },
-{
+  {
     title: "Gebratener Zander auf Linsengemüse",
     image: "recipe_54.jpg",
     portions: 2,
@@ -2103,9 +1897,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 530,
@@ -2115,7 +1906,7 @@ db.recipes.insertMany([
     },
     id: "e6ec97b7-0c48-48c4-9253-77934cd01f29"
   },
-{
+  {
     title: "Fischstäbchen-Bowl mit Quinoa und Gemüse",
     image: "recipe_55.jpg",
     portions: 2,
@@ -2141,11 +1932,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Bowl",
-      "Snack"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 580,
@@ -2155,7 +1941,7 @@ db.recipes.insertMany([
     },
     id: "f0471a6b-bf8e-4d79-a2df-25e1f0a01434"
   },
-{
+  {
     title: "Lachs-Spinat-Lasagne",
     image: "recipe_56.jpg",
     portions: 2,
@@ -2183,9 +1969,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "45 Minuten",
     nutrition: {
       calories: 620,
@@ -2195,7 +1978,7 @@ db.recipes.insertMany([
     },
     id: "6d7c9f38-8120-4eb5-b33f-ec3bf62976eb"
   },
-{
+  {
     title: "Makrelenaufstrich mit Frischkäse",
     image: "recipe_57.jpg",
     portions: 2,
@@ -2218,11 +2001,6 @@ db.recipes.insertMany([
       "Keto",
       "Glutenfrei",
     ],
-    categories: [
-      "Snack",
-      "Frühstück",
-      "Aufstrich"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 340,
@@ -2232,7 +2010,7 @@ db.recipes.insertMany([
     },
     id: "a71acfc2-69d4-4d34-a456-fea1d23c498e"
   },
-{
+  {
     title: "Gebratene Sardinen mit Zitronenöl",
     image: "recipe_58.jpg",
     portions: 2,
@@ -2256,9 +2034,6 @@ db.recipes.insertMany([
       "Keto",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 410,
@@ -2268,7 +2043,7 @@ db.recipes.insertMany([
     },
     id: "fb2bbbbe-b663-4bff-a93a-795fd904381b"
   },
-{
+  {
     title: "Zitronen-Kräuter-Forelle im Ofen",
     image: "recipe_59.jpg",
     portions: 2,
@@ -2293,9 +2068,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 480,
@@ -2305,7 +2077,7 @@ db.recipes.insertMany([
     },
     id: "65d63001-2057-4d0e-aeec-51ed85d937d2"
   },
-{
+  {
     title: "Fisch-Tacos mit Rotkohl und Limette",
     image: "recipe_60.jpg",
     portions: 2,
@@ -2332,11 +2104,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Snack",
-      "Hauptgericht",
-      "Streetfood"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 550,
@@ -2346,7 +2113,7 @@ db.recipes.insertMany([
     },
     id: "a02077f3-f179-4020-abd9-7f9bd4947a82"
   },
-{
+  {
     title: "Zucchini-Nudeln mit Avocado-Pesto",
     image: "recipe_61.jpg",
     portions: 2,
@@ -2374,10 +2141,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 460,
@@ -2387,7 +2150,7 @@ db.recipes.insertMany([
     },
     id: "d56c3bd6-33a1-4ade-ada2-be3d60c34d67"
   },
-{
+  {
     title: "Keto-Hähnchenbrust mit Brokkoli und Käse",
     image: "recipe_62.jpg",
     portions: 2,
@@ -2414,9 +2177,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 560,
@@ -2426,7 +2186,7 @@ db.recipes.insertMany([
     },
     id: "682dd7dd-4ed2-450b-8125-4d15e1a97184"
   },
-{
+  {
     title: "Keto-Lachs auf Spinatbett",
     image: "recipe_63.jpg",
     portions: 2,
@@ -2453,9 +2213,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 540,
@@ -2465,7 +2222,7 @@ db.recipes.insertMany([
     },
     id: "8812a80e-55e3-4291-87ee-5dc7084cbab3"
   },
-{
+  {
     title: "Eiersalat mit Speck und Schnittlauch",
     image: "recipe_64.jpg",
     portions: 2,
@@ -2491,11 +2248,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 520,
@@ -2505,7 +2257,7 @@ db.recipes.insertMany([
     },
     id: "ac144bff-ffc7-4c57-91b8-622a28d502f8"
   },
-{
+  {
     title: "Zucchini-Pizza mit Mozzarella",
     image: "recipe_65.jpg",
     portions: 2,
@@ -2531,10 +2283,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 420,
@@ -2544,7 +2292,7 @@ db.recipes.insertMany([
     },
     id: "aa15637a-5ef0-46d6-9b6c-f595149f5f6d"
   },
-{
+  {
     title: "Keto-Rührei mit Champignons",
     image: "recipe_66.jpg",
     portions: 2,
@@ -2569,10 +2317,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 390,
@@ -2582,7 +2326,7 @@ db.recipes.insertMany([
     },
     id: "f8a6c030-a0d5-487f-b7a3-ab1e534ce6ac"
   },
-{
+  {
     title: "Keto-Burger mit Salat statt Brötchen",
     image: "recipe_67.jpg",
     portions: 2,
@@ -2609,10 +2353,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 580,
@@ -2622,7 +2362,7 @@ db.recipes.insertMany([
     },
     id: "510dc2bb-67fe-4731-94bf-826929817531"
   },
-{
+  {
     title: "Auberginen-Röllchen mit Frischkäsefüllung",
     image: "recipe_68.jpg",
     portions: 2,
@@ -2647,10 +2387,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Snack",
-      "Beilage"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 340,
@@ -2660,7 +2396,7 @@ db.recipes.insertMany([
     },
     id: "8abceec9-c6a9-40fb-8d5a-ac0a4ac48b57"
   },
-{
+  {
     title: "Blumenkohlreis mit Hähnchen",
     image: "recipe_69.jpg",
     portions: 2,
@@ -2687,9 +2423,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 480,
@@ -2699,7 +2432,7 @@ db.recipes.insertMany([
     },
     id: "b7d00961-40c6-42dc-863f-a675d73902c5"
   },
-{
+  {
     title: "Keto-Omelette mit Käse und Spinat",
     image: "recipe_70.jpg",
     portions: 2,
@@ -2725,10 +2458,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 410,
@@ -2738,7 +2467,7 @@ db.recipes.insertMany([
     },
     id: "6ceca33e-d16e-4b3e-9ad7-5408d17211c5"
   },
-{
+  {
     title: "Thunfisch-Avocado-Salat",
     image: "recipe_71.jpg",
     portions: 2,
@@ -2762,10 +2491,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 380,
@@ -2775,7 +2500,7 @@ db.recipes.insertMany([
     },
     id: "44a85497-81c5-40e9-ada2-2bb2dcd3e34f"
   },
-{
+  {
     title: "Gefüllte Paprika mit Hack und Feta",
     image: "recipe_72.jpg",
     portions: 2,
@@ -2803,9 +2528,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 560,
@@ -2815,7 +2537,7 @@ db.recipes.insertMany([
     },
     id: "b4711cb5-05ce-4105-97b7-0f3ebc0369fa"
   },
-{
+  {
     title: "Keto-Pfannkuchen mit Frischkäsefüllung",
     image: "recipe_73.jpg",
     portions: 2,
@@ -2838,10 +2560,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Dessert"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 350,
@@ -2851,7 +2569,7 @@ db.recipes.insertMany([
     },
     id: "c5a646c5-3386-41a8-9337-59d1e99a8b6f"
   },
-{
+  {
     title: "Mozzarella-Tomaten-Auflauf mit Pesto",
     image: "recipe_74.jpg",
     portions: 2,
@@ -2877,11 +2595,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 420,
@@ -2891,7 +2604,7 @@ db.recipes.insertMany([
     },
     id: "0dba31ce-271c-4b67-b8b5-8f6a956fc153"
   },
-{
+  {
     title: "Keto-Suppe mit Lachs und Kokosmilch",
     image: "recipe_75.jpg",
     portions: 2,
@@ -2918,10 +2631,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Suppe"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 540,
@@ -2931,7 +2640,7 @@ db.recipes.insertMany([
     },
     id: "094f1bdd-49ab-4870-bb2f-35c8a52a30dd"
   },
-{
+  {
     title: "Rindergeschnetzeltes mit Paprika",
     image: "recipe_76.jpg",
     portions: 2,
@@ -2961,9 +2670,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 610,
@@ -2973,7 +2679,7 @@ db.recipes.insertMany([
     },
     id: "0f6bfec4-fe37-4fb5-92a8-369badc912f6"
   },
-{
+  {
     title: "Hähnchen-Curry mit Kokosmilch",
     image: "recipe_77.jpg",
     portions: 2,
@@ -2999,9 +2705,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 540,
@@ -3011,7 +2714,7 @@ db.recipes.insertMany([
     },
     id: "7e4660c6-8774-433e-88ec-50b98b6ae207"
   },
-{
+  {
     title: "Gefüllte Hähnchenbrust mit Spinat und Käse",
     image: "recipe_78.jpg",
     portions: 2,
@@ -3037,9 +2740,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 520,
@@ -3049,7 +2749,7 @@ db.recipes.insertMany([
     },
     id: "81c2e318-066c-4d75-99c7-62492b12ca86"
   },
-{
+  {
     title: "Hackfleischpfanne mit Gemüse",
     image: "recipe_79.jpg",
     portions: 2,
@@ -3077,10 +2777,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 490,
@@ -3090,7 +2786,7 @@ db.recipes.insertMany([
     },
     id: "fc0c0d8b-3b10-46d4-9f49-f7e8542049fd"
   },
-{
+  {
     title: "Klassisches Gulasch",
     image: "recipe_80.jpg",
     portions: 2,
@@ -3118,9 +2814,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "1 Stunde 30 Minuten",
     nutrition: {
       calories: 620,
@@ -3130,7 +2823,7 @@ db.recipes.insertMany([
     },
     id: "e4656226-ee9c-48da-890c-ca944fdcbbb8"
   },
-{
+  {
     title: "Hackfleisch-Zucchini-Röllchen",
     image: "recipe_81.jpg",
     portions: 2,
@@ -3156,10 +2849,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Beilage"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 470,
@@ -3169,7 +2858,7 @@ db.recipes.insertMany([
     },
     id: "917d8229-193d-475d-aa86-71f2aa001eef"
   },
-{
+  {
     title: "Chicken Wings aus dem Ofen",
     image: "recipe_82.jpg",
     portions: 2,
@@ -3192,10 +2881,6 @@ db.recipes.insertMany([
       "Glutenfrei",
       "Keto",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "45 Minuten",
     nutrition: {
       calories: 580,
@@ -3205,7 +2890,7 @@ db.recipes.insertMany([
     },
     id: "865c695a-9d21-4ceb-be19-a68b2444ea91"
   },
-{
+  {
     title: "Cevapcici mit Ajvar und Zwiebeln",
     image: "recipe_83.jpg",
     portions: 2,
@@ -3230,10 +2915,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 550,
@@ -3243,7 +2924,7 @@ db.recipes.insertMany([
     },
     id: "f056d129-2e55-4ebb-b191-d8a578704938"
   },
-{
+  {
     title: "Putenstreifen in Champignonrahm",
     image: "recipe_84.jpg",
     portions: 2,
@@ -3270,9 +2951,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 530,
@@ -3282,7 +2960,7 @@ db.recipes.insertMany([
     },
     id: "d0b91a13-2bef-4fa6-99cb-3215fa936eb8"
   },
-{
+  {
     title: "Hackbällchen in Tomatensauce",
     image: "recipe_85.jpg",
     portions: 2,
@@ -3309,9 +2987,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 580,
@@ -3321,7 +2996,7 @@ db.recipes.insertMany([
     },
     id: "1c1d0543-7396-4561-9bfc-5f180207a583"
   },
-{
+  {
     title: "Schweinemedaillons mit Kräuterbutter",
     image: "recipe_86.jpg",
     portions: 2,
@@ -3343,9 +3018,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 500,
@@ -3355,7 +3027,7 @@ db.recipes.insertMany([
     },
     id: "f25a177c-b355-44d3-823c-2ef57ce75f84"
   },
-{
+  {
     title: "Frikadellen mit Zucchinigemüse",
     image: "recipe_87.jpg",
     portions: 2,
@@ -3381,10 +3053,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Beilage"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 560,
@@ -3394,7 +3062,7 @@ db.recipes.insertMany([
     },
     id: "94901095-0ac3-43f2-b133-bf772d4db818"
   },
-{
+  {
     title: "Puten-Gemüse-Wok",
     image: "recipe_88.jpg",
     portions: 2,
@@ -3419,10 +3087,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 490,
@@ -3432,7 +3096,7 @@ db.recipes.insertMany([
     },
     id: "209b957d-fae9-4a24-bff3-44a89aabfb19"
   },
-{
+  {
     title: "Leberkäse mit Spiegelei",
     image: "recipe_89.jpg",
     portions: 2,
@@ -3451,10 +3115,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Frühstück",
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 520,
@@ -3464,7 +3124,7 @@ db.recipes.insertMany([
     },
     id: "2baa73a0-4321-4ad4-b4eb-a87e5c9d096e"
   },
-{
+  {
     title: "Schaschlikspieße mit Paprika und Zwiebel",
     image: "recipe_90.jpg",
     portions: 2,
@@ -3489,10 +3149,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Grillen"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 600,
@@ -3502,7 +3158,7 @@ db.recipes.insertMany([
     },
     id: "2552d92a-f245-436a-aa30-7a9f415fae1a"
   },
-{
+  {
     title: "Zucchini-Spaghetti mit Avocado-Creme",
     image: "recipe_91.jpg",
     portions: 2,
@@ -3530,10 +3186,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 380,
@@ -3543,7 +3195,7 @@ db.recipes.insertMany([
     },
     id: "32318522-1885-46a8-acaa-a01fcc2c4726"
   },
-{
+  {
     title: "Rohkost-Bowl mit Cashew-Dressing",
     image: "recipe_92.jpg",
     portions: 2,
@@ -3571,10 +3223,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Salat"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 400,
@@ -3584,7 +3232,7 @@ db.recipes.insertMany([
     },
     id: "348a3ce6-8799-48d7-9ce3-91560472e830"
   },
-{
+  {
     title: "Gefüllte Paprika mit Mandelmus",
     image: "recipe_93.jpg",
     portions: 2,
@@ -3610,10 +3258,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Vorspeise",
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 350,
@@ -3623,7 +3267,7 @@ db.recipes.insertMany([
     },
     id: "425a37f0-a35f-4805-86cd-02aac1e9e68c"
   },
-{
+  {
     title: "Rohes Porridge mit Chiasamen",
     image: "recipe_94.jpg",
     portions: 2,
@@ -3649,10 +3293,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Dessert"
-    ],
     preparation_time: "1 Stunde",
     nutrition: {
       calories: 420,
@@ -3662,7 +3302,7 @@ db.recipes.insertMany([
     },
     id: "0069a5a6-fe17-42ab-b348-a330cc0ad20c"
   },
-{
+  {
     title: "Zucchini-Carpaccio mit Walnüssen",
     image: "recipe_95.jpg",
     portions: 2,
@@ -3688,10 +3328,6 @@ db.recipes.insertMany([
       "Vegan",
       "Vegetarisch",
     ],
-    categories: [
-      "Vorspeise",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 310,
@@ -3701,7 +3337,7 @@ db.recipes.insertMany([
     },
     id: "dd233e50-e814-48ed-bfd4-92180ba6f755"
   },
-{
+  {
     title: "Rohkost-Wraps mit Mandelcreme",
     image: "recipe_96.jpg",
     portions: 2,
@@ -3729,10 +3365,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Snack",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 360,
@@ -3742,7 +3374,7 @@ db.recipes.insertMany([
     },
     id: "5f5454ea-4c1d-4100-9685-406ec1b44ae3"
   },
-{
+  {
     title: "Rohkost-Sushi mit Nussreis",
     image: "recipe_97.jpg",
     portions: 2,
@@ -3770,10 +3402,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Vorspeise"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 420,
@@ -3783,7 +3411,7 @@ db.recipes.insertMany([
     },
     id: "81088e07-cb41-4e43-b2f0-5a770b0a78f9"
   },
-{
+  {
     title: "Fenchel-Orangen-Salat mit Walnüssen",
     image: "recipe_98.jpg",
     portions: 2,
@@ -3809,10 +3437,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Vorspeise",
-      "Salat"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 300,
@@ -3822,7 +3446,7 @@ db.recipes.insertMany([
     },
     id: "c770c3c1-897c-48bc-b9ce-0ef53a057afc"
   },
-{
+  {
     title: "Karotten-Apfel-Salat mit Sesam",
     image: "recipe_99.jpg",
     portions: 2,
@@ -3846,10 +3470,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Kalorienarm"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 260,
@@ -3859,7 +3479,7 @@ db.recipes.insertMany([
     },
     id: "92b3fa13-ff3a-4b47-b9fd-efe4ce6d0115"
   },
-{
+  {
     title: "Rohkost-Lasagne mit Cashewcreme",
     image: "recipe_100.jpg",
     portions: 2,
@@ -3887,9 +3507,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 430,
@@ -3899,7 +3516,7 @@ db.recipes.insertMany([
     },
     id: "45a524c9-1b64-458c-b696-c0f82f48316f"
   },
-{
+  {
     title: "Rohes Schoko-Bananen-Dessert",
     image: "recipe_101.jpg",
     portions: 2,
@@ -3924,9 +3541,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Dessert"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 360,
@@ -3936,7 +3550,7 @@ db.recipes.insertMany([
     },
     id: "70291a37-c264-4fe0-be2d-202e7613576a"
   },
-{
+  {
     title: "Avocado-Gurken-Suppe (kalt)",
     image: "recipe_102.jpg",
     portions: 2,
@@ -3961,10 +3575,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Suppe",
-      "Vorspeise"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 310,
@@ -3974,7 +3584,7 @@ db.recipes.insertMany([
     },
     id: "5926fbcd-876a-48cb-8535-e0ae611ea071"
   },
-{
+  {
     title: "Wassermelonen-Feta-Salat (Rohkost-Variante)",
     image: "recipe_103.jpg",
     portions: 2,
@@ -3997,10 +3607,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Salat"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 240,
@@ -4010,7 +3616,7 @@ db.recipes.insertMany([
     },
     id: "f36fd0ee-262b-421c-a47c-86e00553bc39"
   },
-{
+  {
     title: "Rohkost-Energiekugeln mit Kakao",
     image: "recipe_104.jpg",
     portions: 2,
@@ -4034,10 +3640,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Dessert",
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 320,
@@ -4047,7 +3649,7 @@ db.recipes.insertMany([
     },
     id: "c23f16ce-0ce3-4c06-a0f2-7090de7be183"
   },
-{
+  {
     title: "Rohes Bircher Müsli",
     image: "recipe_105.jpg",
     portions: 2,
@@ -4071,9 +3673,6 @@ db.recipes.insertMany([
       "Rohkost",
       "Vegetarisch",
     ],
-    categories: [
-      "Frühstück"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 370,
@@ -4083,7 +3682,7 @@ db.recipes.insertMany([
     },
     id: "856dc0af-77e4-432d-be5c-90b928cf43a8"
   },
-{
+  {
     title: "Gefüllte Paprika mit Hackfleisch",
     image: "recipe_106.jpg",
     portions: 2,
@@ -4112,9 +3711,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "45 Minuten",
     nutrition: {
       calories: 520,
@@ -4124,7 +3720,7 @@ db.recipes.insertMany([
     },
     id: "599d3ca6-8d6a-44b9-b91b-0681de9454e4"
   },
-{
+  {
     title: "Süßkartoffelpfanne mit Spinat und Ei",
     image: "recipe_107.jpg",
     portions: 2,
@@ -4149,10 +3745,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Frühstück"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 460,
@@ -4162,7 +3754,7 @@ db.recipes.insertMany([
     },
     id: "85fafa23-31ec-4e2f-b00d-ad86dec64886"
   },
-{
+  {
     title: "Lachsfilet mit Brokkoli und Zitrone",
     image: "recipe_108.jpg",
     portions: 2,
@@ -4185,10 +3777,6 @@ db.recipes.insertMany([
       "Fisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 540,
@@ -4198,7 +3786,7 @@ db.recipes.insertMany([
     },
     id: "1b786dc5-574d-4f0e-b15f-abe1af927a6c"
   },
-{
+  {
     title: "Quinoasalat mit Gemüse",
     image: "recipe_109.jpg",
     portions: 2,
@@ -4225,11 +3813,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Beilage",
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 410,
@@ -4239,7 +3822,7 @@ db.recipes.insertMany([
     },
     id: "25907362-e4f4-4bda-949a-a4e51a2866b8"
   },
-{
+  {
     title: "Rührei mit Paprika und Tomate",
     image: "recipe_110.jpg",
     portions: 2,
@@ -4262,10 +3845,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Hauptgericht"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 380,
@@ -4275,7 +3854,7 @@ db.recipes.insertMany([
     },
     id: "f86d3ab2-13d4-45a4-b3fa-995527bbe862"
   },
-{
+  {
     title: "Zucchinipuffer mit Quarkdip",
     image: "recipe_111.jpg",
     portions: 2,
@@ -4300,10 +3879,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 400,
@@ -4313,7 +3888,7 @@ db.recipes.insertMany([
     },
     id: "1f45fada-8730-4aaa-ad00-15c5c52df4fa"
   },
-{
+  {
     title: "Gefüllte Aubergine mit Hackfleisch",
     image: "recipe_112.jpg",
     portions: 2,
@@ -4338,9 +3913,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 530,
@@ -4350,7 +3922,7 @@ db.recipes.insertMany([
     },
     id: "142d7738-1e1a-4c0f-adcf-810231f591e6"
   },
-{
+  {
     title: "Linsensuppe mit Möhren",
     image: "recipe_113.jpg",
     portions: 2,
@@ -4377,10 +3949,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Suppe",
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 420,
@@ -4390,7 +3958,7 @@ db.recipes.insertMany([
     },
     id: "c8a7d0a2-8849-4b5c-a224-67febcd51b9b"
   },
-{
+  {
     title: "Reisnudelsalat mit Sesam-Dressing",
     image: "recipe_114.jpg",
     portions: 2,
@@ -4416,10 +3984,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Salat",
-      "Beilage"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 410,
@@ -4429,7 +3993,7 @@ db.recipes.insertMany([
     },
     id: "008c1a71-4527-4765-b62f-902b135b553b"
   },
-{
+  {
     title: "Frühstücks-Bowl mit Beeren und Nüssen",
     image: "recipe_115.jpg",
     portions: 2,
@@ -4451,9 +4015,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 350,
@@ -4463,7 +4024,7 @@ db.recipes.insertMany([
     },
     id: "165f235f-e641-41a7-8f4c-34a013659ee7"
   },
-{
+  {
     title: "Hähnchenbrust mit Ofengemüse",
     image: "recipe_116.jpg",
     portions: 2,
@@ -4489,9 +4050,6 @@ db.recipes.insertMany([
       "Fleisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 480,
@@ -4501,7 +4059,7 @@ db.recipes.insertMany([
     },
     id: "2cf1a35b-703b-4460-a7ea-86bbbcf3d32d"
   },
-{
+  {
     title: "Blumenkohlreis mit Gemüsepfanne",
     image: "recipe_117.jpg",
     portions: 2,
@@ -4527,10 +4085,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht",
-      "Kalorienarm"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 350,
@@ -4540,7 +4094,7 @@ db.recipes.insertMany([
     },
     id: "91881418-ab9c-43f9-bb54-41566ff98e5a"
   },
-{
+  {
     title: "Kichererbsen-Curry mit Kokosmilch",
     image: "recipe_118.jpg",
     portions: 2,
@@ -4567,9 +4121,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 520,
@@ -4579,7 +4130,7 @@ db.recipes.insertMany([
     },
     id: "040c602b-534c-4978-b300-1dedea0c6462"
   },
-{
+  {
     title: "Maispfannkuchen mit Guacamole",
     image: "recipe_119.jpg",
     portions: 2,
@@ -4604,10 +4155,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Frühstück",
-      "Snack"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 410,
@@ -4617,7 +4164,7 @@ db.recipes.insertMany([
     },
     id: "86ca6f46-0052-4599-b517-541840ae4087"
   },
-{
+  {
     title: "Reis mit gebratenem Tofu und Gemüse",
     image: "recipe_120.jpg",
     portions: 2,
@@ -4644,9 +4191,6 @@ db.recipes.insertMany([
       "Vegetarisch",
       "Glutenfrei",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "35 Minuten",
     nutrition: {
       calories: 490,
@@ -4656,7 +4200,7 @@ db.recipes.insertMany([
     },
     id: "ab51ba57-d947-4f8d-9904-758b45aa89dd"
   },
-{
+  {
     title: "Spaghetti Carbonara",
     image: "recipe_121.jpg",
     portions: 2,
@@ -4681,9 +4225,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 720,
@@ -4693,7 +4234,7 @@ db.recipes.insertMany([
     },
     id: "6ba4afe3-5b9d-4352-bc28-6e15435b482c"
   },
-{
+  {
     title: "Hähnchenschenkel mit Kartoffelspalten",
     image: "recipe_122.jpg",
     portions: 2,
@@ -4717,9 +4258,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "50 Minuten",
     nutrition: {
       calories: 650,
@@ -4729,7 +4267,7 @@ db.recipes.insertMany([
     },
     id: "074a6736-0b8d-43aa-892e-081fa121972f"
   },
-{
+  {
     title: "Rührei mit Schinken und Käse",
     image: "recipe_123.jpg",
     portions: 2,
@@ -4753,9 +4291,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Frühstück"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 480,
@@ -4765,7 +4300,7 @@ db.recipes.insertMany([
     },
     id: "69c59e16-5b55-462a-8992-4654ff36c8be"
   },
-{
+  {
     title: "Thunfischsalat mit Ei",
     image: "recipe_124.jpg",
     portions: 2,
@@ -4791,10 +4326,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Salat",
-      "Kalorienarm"
-    ],
     preparation_time: "20 Minuten",
     nutrition: {
       calories: 380,
@@ -4804,7 +4335,7 @@ db.recipes.insertMany([
     },
     id: "2118797a-48c4-4020-9c18-e17e6465c50c"
   },
-{
+  {
     title: "Reispfanne mit Hähnchen und Erbsen",
     image: "recipe_125.jpg",
     portions: 2,
@@ -4829,9 +4360,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 540,
@@ -4841,7 +4369,7 @@ db.recipes.insertMany([
     },
     id: "fd43cd37-b48e-4732-b26a-cd69c9532488"
   },
-{
+  {
     title: "Bauernfrühstück mit Speck und Kartoffeln",
     image: "recipe_126.jpg",
     portions: 2,
@@ -4866,10 +4394,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Frühstück",
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 620,
@@ -4879,7 +4403,7 @@ db.recipes.insertMany([
     },
     id: "8180e474-3c73-466f-8e5e-aa2a8fe4387e"
   },
-{
+  {
     title: "Currywurst mit Pommes aus dem Ofen",
     image: "recipe_127.jpg",
     portions: 2,
@@ -4905,10 +4429,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht",
-      "Snack"
-    ],
     preparation_time: "40 Minuten",
     nutrition: {
       calories: 740,
@@ -4918,7 +4438,7 @@ db.recipes.insertMany([
     },
     id: "06f57917-3405-42a1-aed4-486ac8e3916c"
   },
-{
+  {
     title: "Penne mit Thunfisch-Tomaten-Sauce",
     image: "recipe_128.jpg",
     portions: 2,
@@ -4943,9 +4463,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 620,
@@ -4955,7 +4472,7 @@ db.recipes.insertMany([
     },
     id: "0dee8ee7-e43d-46fc-9d50-89b585f83aaa"
   },
-{
+  {
     title: "Linsensalat mit Schafskäse",
     image: "recipe_129.jpg",
     portions: 2,
@@ -4979,10 +4496,6 @@ db.recipes.insertMany([
     diet_types: [
       "Vegetarisch",
     ],
-    categories: [
-      "Salat",
-      "Beilage"
-    ],
     preparation_time: "30 Minuten",
     nutrition: {
       calories: 430,
@@ -4992,7 +4505,7 @@ db.recipes.insertMany([
     },
     id: "296af97f-c03f-457f-b1fa-0488eecde846"
   },
-{
+  {
     title: "Rindergeschnetzeltes mit Paprika",
     image: "recipe_130.jpg",
     portions: 2,
@@ -5016,9 +4529,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 560,
@@ -5028,7 +4538,7 @@ db.recipes.insertMany([
     },
     id: "d3a71a7a-8558-4060-b6cc-653e44d30e0f"
   },
-{
+  {
     title: "Tortilla mit Schinken und Käse",
     image: "recipe_131.jpg",
     portions: 2,
@@ -5051,9 +4561,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Snack"
-    ],
     preparation_time: "15 Minuten",
     nutrition: {
       calories: 480,
@@ -5063,7 +4570,7 @@ db.recipes.insertMany([
     },
     id: "2f84157c-3a6d-458e-9a6b-4d5e459e82d1"
   },
-{
+  {
     title: "Bratkartoffeln mit Spiegelei",
     image: "recipe_132.jpg",
     portions: 2,
@@ -5086,9 +4593,6 @@ db.recipes.insertMany([
     diet_types: [
       "Vegetarisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 520,
@@ -5098,7 +4602,7 @@ db.recipes.insertMany([
     },
     id: "920ee7ed-a047-42fb-9334-5f66d1f21289"
   },
-{
+  {
     title: "Schinken-Käse-Toast",
     image: "recipe_133.jpg",
     portions: 2,
@@ -5117,10 +4621,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fleisch",
     ],
-    categories: [
-      "Snack",
-      "Frühstück"
-    ],
     preparation_time: "10 Minuten",
     nutrition: {
       calories: 400,
@@ -5130,7 +4630,7 @@ db.recipes.insertMany([
     },
     id: "5e3a70aa-44ef-4f2e-b55f-6cce0d1dd83f"
   },
-{
+  {
     title: "Lachs mit Kräuterkruste",
     image: "recipe_134.jpg",
     portions: 2,
@@ -5153,9 +4653,6 @@ db.recipes.insertMany([
     diet_types: [
       "Fisch",
     ],
-    categories: [
-      "Hauptgericht"
-    ],
     preparation_time: "25 Minuten",
     nutrition: {
       calories: 550,
@@ -5165,7 +4662,7 @@ db.recipes.insertMany([
     },
     id: "50c216a3-dbf1-428c-9142-46b539bf4201"
   },
-{
+  {
     title: "Nudelsalat mit Würstchen",
     image: "recipe_135.jpg",
     portions: 2,
@@ -5187,10 +4684,6 @@ db.recipes.insertMany([
     ],
     diet_types: [
       "Fleisch",
-    ],
-    categories: [
-      "Beilage",
-      "Snack"
     ],
     preparation_time: "30 Minuten",
     nutrition: {
