@@ -26,7 +26,8 @@ export class SettingsComponent implements OnInit {
     preferences: '',
     password: '',
     username: '',
-    picture: 'character_9.png'
+    picture: 'character_9.png',
+    role: ''
   };
 
   currentProfile = {
@@ -49,6 +50,7 @@ export class SettingsComponent implements OnInit {
       next: (data: any) => {
         this.profile.username = data.username;
         this.profile.picture = data.picture;
+        this.profile.role = data.role;
 
         this.currentProfile = {
           firstname: data.firstname,

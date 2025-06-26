@@ -90,11 +90,7 @@ export class RecipeDetailComponent implements OnInit {
   loadComments(recipeId: string): void {
     this.commentService.getCommentsForRecipe(recipeId).subscribe({
       next: (data) => {
-        this.comments = (data.message ?? []).map((comment: any) => ({
-          ...comment,
-          created_at: new Date(comment.created_at)
-        }));
-        this.cdr.detectChanges();
+        this.comments = data.message ?? [];
       },
       error: () => {
         alert('Fehler beim Laden der Kommentare');
@@ -117,7 +113,7 @@ export class RecipeDetailComponent implements OnInit {
       recipeID: recipeId,
       rating: this.newComment.rating,
       comment: this.newComment.comment,
-      created_at: sqlTimestamp
+      created_at: sqlTimestamp  
     };
 
     this.commentService.createComment(payload).subscribe({
