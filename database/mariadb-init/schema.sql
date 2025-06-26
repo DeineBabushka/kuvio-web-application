@@ -26,7 +26,7 @@ CREATE TABLE comments_ratings
     recipeID   VARCHAR(24),
     rating     INT,
     comment    TEXT,
-    created_at TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE CASCADE
 );

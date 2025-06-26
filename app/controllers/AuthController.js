@@ -18,9 +18,6 @@ async function registerAction(request, response) {
     response.status(status.code).json(status.message)
 }
 
-async function logoutAction(request, response) {
-
-}
 
 async function readUserFromRequest(request) {
     let userid = request.params.id
@@ -45,6 +42,5 @@ async function readUserFromRequest(request) {
 
 module.exports = {
     loginAction,
-    registerAction,
-    logoutAction
+    registerAction
 }
