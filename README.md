@@ -1,6 +1,8 @@
 
 # How to install Kuvio on your device!
 
+[TOC]
+
 ## Requirements
 
 >Docker
