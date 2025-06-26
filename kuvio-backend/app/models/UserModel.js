@@ -27,7 +27,7 @@ async function getAll() {
 
 async function getUserPublic(username) {
     try {
-        const user = await pool.query('SELECT userID, picture, firstname, lastname, username, role FROM user WHERE username = ? AND is_deleted = 0', [username]);
+        const user = await pool.query('SELECT userID, picture, firstname, lastname, username, role, preferences FROM user WHERE username = ? AND is_deleted = 0', [username]);
         if (!user[0]) {
             return { message: `User does not exist`, code: 404 };
         }
@@ -89,12 +89,12 @@ async function deleteUser(userid, action) {
     let conn = await pool.getConnection();
     let deletionStatus = 1
 
-    if(action === "UNDO") {
+    if (action === "UNDO") {
         deletionStatus = 0
     }
 
     try {
-        await conn.query('UPDATE user SET is_deleted = ? WHERE userID = ?', [deletionStatus,userid]);
+        await conn.query('UPDATE user SET is_deleted = ? WHERE userID = ?', [deletionStatus, userid]);
     } catch (err) {
         return { message: `An error occurred`, code: 500 };
     } finally {
