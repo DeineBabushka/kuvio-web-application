@@ -45,6 +45,16 @@ After the Setup is finished open http://localhost:4200
 
 Congrats, you installed Kuvio!
 
+Use the following Standard-Credentials to test Kuvio:
+
+### Admin-Account
+- Username: admin
+- Password: Test123321!
+
+### User-Account
+- Username: test
+- Password: Test123321!
+
 # Removing Kuvio
 
 in the kuvio-release directory, execute the following:
