@@ -36,7 +36,7 @@ const client = new MongoClient(uri, {
 async function runMongo() {
   try {
     await client.connect();
-    await client.db(`${process.env.MONGO_DATABASE}`).command({ ping: 1 });
+    await client.db('mongo_fullstack_db').command({ ping: 1 });
   } catch (err) {
   } finally {
     await client.close();
