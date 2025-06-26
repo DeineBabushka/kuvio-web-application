@@ -43,9 +43,9 @@ docker-compose up -d --build
 
 After the Setup is finished open http://localhost:4200
 
-✨ Congrats, you installed Kuvio! ✨
+Congrats, you installed Kuvio!
 
-# Removing Kuvio 😢
+# Removing Kuvio
 
 in the kuvio-release directory, execute the following:
 
@@ -55,4 +55,4 @@ docker-compose down -v
 rm -r *data
 ```
 
-You removed Kuvio 🥺😭
+You removed Kuvio
