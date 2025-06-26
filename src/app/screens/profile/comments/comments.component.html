@@ -1,27 +1,28 @@
 @if (comments.length > 0) {
-  <div class="comments-section">
-    <h2 class="comment-title">Kommentare von <span>{{ profile?.username }}:</span></h2>
-    @for (comment of comments; track comment) {
-      <div class="comment-card">
-        <p>
-          <strong>Rezept: </strong>
-          <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
-        </p>
-        <p><strong>Bewertung: </strong> {{ comment.rating }} / 5</p>
-        <p><strong>Kommentar: </strong> {{ comment.comment }}</p>
-        <p><strong>Erstellt am: </strong> {{ comment.created_at | date:'dd.MM.yyyy, HH:mm' }}</p>
-        @if (comment.userID === currentUserId) {
-          <button (click)="deleteComment(comment.commentID)" class="delete-button">
-            Kommentar löschen
-          </button>
-        }
-      </div>
+<div class="comments-section">
+  <a routerLink="/profile" class="back-link"> ← zum Profil</a>
+  <h2 class="comment-title">Kommentare von <span>{{ profile?.username }}:</span></h2>
+  @for (comment of comments; track comment) {
+  <div class="comment-card">
+    <p>
+      <strong>Rezept: </strong>
+      <a [routerLink]="['/recipe', comment.recipeID]">{{ comment.recipeTitle }}</a>
+    </p>
+    <p><strong>Bewertung: </strong> {{ comment.rating }} / 5</p>
+    <p><strong>Kommentar: </strong> {{ comment.comment }}</p>
+    <p><strong>Erstellt am: </strong> {{ comment.created_at | date:'dd.MM.yyyy, HH:mm' }}</p>
+    @if (comment.userID === currentUserId) {
+    <button (click)="deleteComment(comment.commentID)" class="delete-button">
+      Kommentar löschen
+    </button>
     }
   </div>
+  }
+</div>
 }
 
 @if (comments.length === 0) {
-  <div class="no-comments">
-    <p>Keine Kommentare vorhanden.</p>
-  </div>
+<div class="no-comments">
+  <p>Keine Kommentare vorhanden.</p>
+</div>
 }
