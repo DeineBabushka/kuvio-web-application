@@ -32,7 +32,6 @@ export class AdminDashboardComponent implements OnInit {
 
     this.http.get('http://localhost:3000/api/user', { headers }).subscribe({
       next: (response) => {
-        console.log(response)
         this.data = response
       },
       error: (err) => this.error = `Error: ${err.message}`

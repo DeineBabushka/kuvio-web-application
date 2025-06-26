@@ -90,4 +90,9 @@ export class PublicCommentsComponent implements OnInit {
   commentList() {
     return this.comments();
   }
+
+  goBack(): void {
+  history.back();
+}
+
 }
