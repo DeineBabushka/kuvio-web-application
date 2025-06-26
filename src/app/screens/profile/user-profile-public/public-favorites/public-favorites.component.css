@@ -61,3 +61,20 @@
     margin-top: 30px;
     font-style: italic;
 }
+
+.back-button {
+    all: unset;
+    display: inline-block;
+    margin: 1rem 0 0 1rem;
+    color: #122620;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    font-family: inherit;
+}
+
+.back-button:hover {
+    color: #388039;
+}

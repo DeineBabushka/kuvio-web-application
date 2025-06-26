@@ -77,4 +77,9 @@ export class PublicFavoritesComponent implements OnInit {
   favoritesList() {
     return this.favorites();
   }
+
+goBack(): void {
+  history.back();
+}
+
 }

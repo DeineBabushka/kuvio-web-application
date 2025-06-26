@@ -1,3 +1,4 @@
+<button class="back-button" (click)="goBack()">⬅ Zurück</button>
 @if (comments().length > 0) {
   <div class="comments-section">
     <h2 class="comment-title">Kommentare von <span>{{ username }}</span></h2>
@@ -9,7 +10,7 @@
         </p>
         <p><strong>Bewertung:</strong> {{ comment.rating }} / 5</p>
         <p><strong>Kommentar:</strong> {{ comment.comment }}</p>
-        <p><strong>Erstellt am:</strong> {{ comment.created_at | date: 'dd.MM.yyyy, HH:mm' }}</p>
+        <p><strong>Erstellt am:</strong> {{ comment.created_at | date: 'dd.MM.yyyy, HH:mm' : 'UTC'  }}</p>
       </div>
     }
   </div>
