@@ -1,3 +1,4 @@
 .idea
+.env
 mongodb_data/
 mariadb-data/
