@@ -1,70 +1,144 @@
+# Kuvio – Fullstack Web Application
 
-# How to install Kuvio on your device!
+A containerized recipe platform built with Angular, Node.js, MongoDB, and MariaDB. Developed as part of the "Fullstack Web Applications" course at Hochschule Worms in summer semester 2025.
 
-[TOC]
+---
+
+## Badges
+
+![Docker](https://img.shields.io/badge/Containerized-Docker-blue)
+![Angular](https://img.shields.io/badge/Frontend-Angular-red)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
+![MariaDB](https://img.shields.io/badge/Relational-Database-blue)
+![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)
+
+---
 
 ## Requirements
 
->Docker
+### Docker
 
-- For Windows:
-	- Install and run Docker Desktop - https://docs.docker.com/desktop/setup/install/windows-install/
+- **Windows:** [Install Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/)
+- **Linux:**
+  - [Install Docker](https://docs.docker.com/desktop/setup/install/linux/)
+  - [Install Docker Compose plugin](https://docs.docker.com/compose/install/linux/)
 
-- For Linux:
-	- Pick your respective distribution and Install Docker with the help of this https://docs.docker.com/desktop/setup/install/linux/
-	- Install the Docker Compose Plugin with the help of this https://docs.docker.com/compose/install/linux/
+### Git
 
- >Git
+- **Windows:** [Download Git](https://git-scm.com/downloads/win)
+- **Linux:** [Download Git](https://git-scm.com/downloads/linux)
 
-- For Windows:
-	- Install git with the help of this https://git-scm.com/downloads/win
+---
 
-- For Linux:
-	- Install git with the help of this https://git-scm.com/downloads/linux
+## Installation
 
-# Installing Kuvio
-
-Open your Terminal/Command Line
-
-Make sure you have no Instances or applications listening on Port 4200, 3000, 27017 and 3306.
-
-Make sure you don't have any Existing Kuvio related Instances running.
-
-Clone the following repository:
+1. Open your terminal or command line.
+2. Ensure nothing is running on ports `4200`, `3000`, `27017`, or `3306`.
+3. Make sure no existing Kuvio containers are running.
+4. Clone the repository:
 
 ```bash
 git clone https://gitlab.ai.it.hs-worms.de/fullstack-webapplications-sose-2025/group-n/kuvio-release
 ```
 
-Switch to the new Directory and execute the following:
+5. Navigate into the project folder:
 
 ```bash
 cd kuvio-release
+```
+
+6. Start the application:
+
+```bash
 docker-compose up -d --build
 ```
 
-After the Setup is finished open http://localhost:4200
+7. Access the frontend at:
 
-Congrats, you installed Kuvio!
+```
+http://localhost:4200
+```
 
-Use the following Standard-Credentials to test Kuvio:
+---
 
-### Admin-Account
-- Username: admin
-- Password: Test123321!
+## Default Credentials
 
-### User-Account
-- Username: test
-- Password: Test123321!
+### Admin
 
-# Removing Kuvio
+- **Username:** `admin`
+- **Password:** `Test123321!`
 
-in the kuvio-release directory, execute the following:
+### User
+
+- **Username:** `test`
+- **Password:** `Test123321!`
+
+---
+
+## Frontend Preview
+
+### Login
+
+![Login](screenshots/login.png)
+
+### Home Page (Recipes of the Day)
+
+![Home](screenshots/home.png)
+
+### Recipe List + Search & Filter
+
+![Recipes](screenshots/recipes.png)
+
+### Favorites Page
+
+![Favorites](screenshots/favorites.png)
+
+### Single Recipe Detail View
+
+![Recipe Detail](screenshots/recipe.png)
+
+### Profile Overview
+
+![Profile](screenshots/profile.png)
+
+### Profile Edit
+
+![Profile Edit](screenshots/profile-settings.png)
+
+### Admin Dashboard (User Management)
+
+![Admin Dashboard](screenshots/Admin-Dashboard.png)
+
+> All screenshots are located in the `screenshots/` folder and can be updated at any time.
+
+---
+
+## Removing Kuvio
+
+To stop and remove containers:
 
 ```bash
 docker-compose down -v
-# If you wish to delete all User Data
+```
+
+To delete all persisted user data:
+
+```bash
 rm -r *data
 ```
 
-You removed Kuvio
+---
+
+## Authors and License
+
+This project was developed as part of the module *"Fullstack Web Applications"* at Hochschule Worms.
+
+### Contributors
+
+- me &
+- Symeon Karagkiaouris  
+- Maximilian Schneider  
+- Valentin Pruin
+
+License: [MIT](LICENSE)
